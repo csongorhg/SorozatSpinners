@@ -28,7 +28,7 @@ public class MenuStage extends MyStage {
 
     public void init()
     {
-        textButton = new MyButton("Play");
+        textButton = new MyButton("Játék");
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -37,7 +37,7 @@ public class MenuStage extends MyStage {
             }
         });
 
-        textButton2 = new MyButton("Settings");
+        textButton2 = new MyButton("Beállítások");
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -46,10 +46,10 @@ public class MenuStage extends MyStage {
             }
         });
 
-        textButton.setSize(200f,60f);
+        textButton.setSize(250f,60f);
         textButton.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/3f));
         addActor(textButton);
-        textButton2.setSize(200f,60f);
+        textButton2.setSize(250f,60f);
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (1/3f));
         addActor(textButton2);
     }
