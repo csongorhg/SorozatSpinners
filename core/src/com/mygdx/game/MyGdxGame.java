@@ -13,7 +13,8 @@ public class MyGdxGame extends Game {
 	
 	@Override
 	public void create () {
-		setScreen(new MenuScreen(this));
+		Assets.prepare();
+		setScreen(new LoadingScreen(this));
 	}
 
 	@Override

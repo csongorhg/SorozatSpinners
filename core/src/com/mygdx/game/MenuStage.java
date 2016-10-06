@@ -33,7 +33,7 @@ public class MenuStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                game.setScreen(new PlayScreen(game));
             }
         });
 
@@ -42,6 +42,7 @@ public class MenuStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+                game.setScreen(new SettingsScreen(game));
             }
         });
 

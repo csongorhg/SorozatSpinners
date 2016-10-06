@@ -17,11 +17,9 @@ abstract public class MyScreen implements Screen {
     protected OrthographicCamera camera = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
     protected ExtendViewport viewport = new ExtendViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
 
-    public float r=1f,g=0.549f,b=0f; //DarkOrange
+    public float r=0f,g=0f,b=0f;
 
     protected Game game;
-
-
 
     public MyScreen(Game game) {
         this.game = game;
@@ -53,7 +51,9 @@ abstract public class MyScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        viewport.update(width, height);
+        viewport.update(width, height, true);
+        camera.translate(((viewport.getWorldWidth() - WORLD_WIDTH) / 2) < 0 ? 0 : -((viewport.getWorldHeight() - WORLD_HEIGHT) / 2 ),
+                (((viewport.getWorldHeight() - WORLD_HEIGHT) / 2 )) < 0 ? 0 : -((viewport.getWorldHeight() - WORLD_HEIGHT) / 2 ));
         camera.update();
     }
 
@@ -73,7 +73,7 @@ abstract public class MyScreen implements Screen {
 
     public void setBackGroundColor(float r, float g, float b)
     {
-        this.r=r;
+        this.r = r;
         this.g = g;
         this.b = b;
     }

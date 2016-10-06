@@ -27,7 +27,6 @@ public class MyButton extends TextButton {
         textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
         textButtonStyle.overFontColor = Color.BLACK;
-
         textButtonStyle.fontColor = Color.WHITE;
     }
     public MyButton(String text) {
@@ -36,7 +35,7 @@ public class MyButton extends TextButton {
     }
 
 
-    protected void init()
-    {
+    protected void init() {
+
     }
 }
