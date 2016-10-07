@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.Game.GameScreen;
 import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.Menu.PlayScreen;
 import com.mygdx.game.MyButton;
@@ -39,7 +40,7 @@ public class HardLevelStage extends MyStage{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                game.setScreen(new MenuScreen(game));
+                game.setScreen(new GameScreen(game));
             }
         });
         textButton2.setSize(600f,60f);
