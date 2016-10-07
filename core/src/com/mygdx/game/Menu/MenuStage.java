@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Menu;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -6,6 +6,9 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.MyButton;
+import com.mygdx.game.MyScreen;
+import com.mygdx.game.MyStage;
 
 /**
  * Created by mordes on 2016.10.05..

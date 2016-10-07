@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
+import com.mygdx.game.Menu.MenuScreen;
 
 /**
  * Created by mordes on 2016.10.06..

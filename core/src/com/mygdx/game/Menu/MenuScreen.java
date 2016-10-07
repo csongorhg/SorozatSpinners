@@ -1,10 +1,9 @@
-package com.mygdx.game;
+package com.mygdx.game.Menu;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.Menu.MenuStage;
+import com.mygdx.game.MyScreen;
 
 /**
  * Created by mordes on 2016.10.05..
