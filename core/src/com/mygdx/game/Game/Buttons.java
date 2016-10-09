@@ -14,7 +14,8 @@ public class Buttons {
 
     private float h = (MyScreen.WORLD_WIDTH)/8f;
 
-    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter;
+    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp;
+
 
     public Buttons() {
         b0 = new MyButton("0");
@@ -148,6 +149,17 @@ public class Buttons {
         });
         bTorol.setSize(3*h,h);
         bTorol.setPosition(2*b8.getWidth()+bEnter.getWidth(), 0f);
+
+        bHelp = new MyButton("Help");
+        bHelp.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+
+            }
+        });
+        bHelp.setSize(2*h,h);
+        bHelp.setPosition(0f, MyScreen.WORLD_HEIGHT-bHelp.getHeight());
     }
 
     public TextButton getB0() {
@@ -196,5 +208,9 @@ public class Buttons {
 
     public TextButton getbEnter() {
         return bEnter;
+    }
+
+    public TextButton getbHelp() {
+        return bHelp;
     }
 }

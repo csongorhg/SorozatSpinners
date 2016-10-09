@@ -1,15 +1,15 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.mygdx.game.Menu.MenuScreen;
-import com.mygdx.game.MyButton;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
+import com.badlogic.gdx.graphics.*;
 
 /**
  * Created by Kicsi on 2016. 10. 07..
@@ -17,7 +17,7 @@ import com.mygdx.game.MyStage;
 
 public class GameStage extends MyStage{
 
-    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter;
+    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp;
 
     public GameStage(Game game) {
         super(game);
@@ -33,6 +33,9 @@ public class GameStage extends MyStage{
         buttons();
 
     }
+
+
+
 
     void buttons(){
         Buttons b = new Buttons();
@@ -60,7 +63,10 @@ public class GameStage extends MyStage{
         addActor(bEnter);
         bTorol = b.getbTorol();
         addActor(bTorol);
+        bHelp = b.getbHelp();
+        addActor(bHelp);
     }
+
 
     @Override
     public void act() {
