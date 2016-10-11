@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 public class Globals {
     public static final String CHARS = "0123456789öüóqwertzuiopőúasdfghjkléáűíyxcvbnm'+!%/=()ÖÜÓQWERTZUIOPŐÚASDFGHJKLÉÁŰÍYXCVBNM?:_*<>#&@{}[],-.";
     public static final BitmapFont FONT_HOBO_STD;
+    public static final BitmapFont FONT_C64;
 
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));
@@ -19,5 +20,14 @@ public class Globals {
         FONT_HOBO_STD = generator.generateFont(parameter);
         FONT_HOBO_STD.setColor(1, 1, 1, 1f);
         generator.dispose();
+
+        FreeTypeFontGenerator generator2 = new FreeTypeFontGenerator(Gdx.files.internal("font/c64a.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter2 = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter2.size = 15;
+        parameter2.characters = CHARS;
+        FONT_C64 = generator2.generateFont(parameter2);
+        FONT_C64.setColor(1, 1, 1, 1f);
+        generator2.dispose();
     }
+
 }
