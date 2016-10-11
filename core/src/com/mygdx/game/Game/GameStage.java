@@ -31,7 +31,7 @@ public class GameStage extends MyStage{
     @Override
     protected void init() {
         buttons();
-
+        new Idozito();
     }
 
 
@@ -65,6 +65,10 @@ public class GameStage extends MyStage{
         addActor(bTorol);
         bHelp = b.getbHelp();
         addActor(bHelp);
+    }
+
+    public static void setText(String s){
+        System.out.println(s.length()!=9?s.substring(0,6)+"0"+s.substring(6,7):s.substring(0,s.length()-1));
     }
 
 
