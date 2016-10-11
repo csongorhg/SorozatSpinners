@@ -7,18 +7,21 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Game.GameScreen;
-import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 import com.mygdx.game.Menu.PlayScreen;
+import com.mygdx.game.ButtonToText;
 
 /**
  * Created by Vince on 2016. 10. 07..
  */
 
+
 public class EasyLevelStage extends MyStage {
-    private TextButton textButton,textButton2;
+    private TextButton textButton,textButton2, szovegButton;
+
+
 
     public EasyLevelStage(Game game) {
         super(game);
@@ -32,9 +35,11 @@ public class EasyLevelStage extends MyStage {
         super(viewport, game);
     }
 
+
+
     @Override
     protected void init() {
-        textButton2 = new MyButton("Könnyű szint kezdése!");
+        textButton2 = new MyButton("Teszt indítása!");
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -46,6 +51,10 @@ public class EasyLevelStage extends MyStage {
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton2.getWidth()/2),MyScreen.WORLD_HEIGHT * (3/4f));
         addActor(textButton2);
 
+        szovegButton = new ButtonToText("Könnyű szint!\r\nEgyes feladványok 1 vagy 2 műveletet tartalmaznak!\r\nA feladatok nem tartalmaznak zárójelet!\r\nA feladatok megoldására 1 perc áll rendelkezésre!\r\n10 feladatra kell válaszolt adni!\r\nSok sikert!");
+        szovegButton.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT/2);
+        szovegButton.setPosition(MyScreen.WORLD_WIDTH/2 - (szovegButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
+        addActor(szovegButton);
 
         textButton = new MyButton("Vissza");
         textButton.addListener(new ClickListener(){
