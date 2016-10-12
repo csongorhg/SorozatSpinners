@@ -6,9 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.mygdx.game.EasyLevel.EasyLevelScreen;
-import com.mygdx.game.HardLevel.HardLevelScreen;
-import com.mygdx.game.MediumLevel.MediumLevelScreen;
+import com.mygdx.game.Game.InformationScreen;
 import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyScreen;
@@ -20,6 +18,7 @@ import com.mygdx.game.MyStage;
 public class PlayStage extends MyStage {
 
     private TextButton textButton,textButton2,textButton3,textButton4;
+    public static int difficulty;
 
     public PlayStage(Game game) {
         super(game);
@@ -40,7 +39,8 @@ public class PlayStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                game.setScreen(new EasyLevelScreen(game));
+                difficulty = 1;
+                game.setScreen(new InformationScreen(game));
             }
         });
         textButton2.setSize(250f,60f);
@@ -53,7 +53,8 @@ public class PlayStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                game.setScreen(new MediumLevelScreen(game));
+                difficulty = 2;
+                game.setScreen(new InformationScreen(game));
             }
         });
         textButton3.setSize(250f,60f);
@@ -66,7 +67,8 @@ public class PlayStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                game.setScreen(new HardLevelScreen(game));
+                difficulty = 3;
+                game.setScreen(new InformationScreen(game));
             }
         });
         textButton4.setSize(250f,60f);
