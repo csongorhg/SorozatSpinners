@@ -10,6 +10,7 @@ public class Sequence extends Operation{
 
     private Vector<Operation> operations = new Vector();
     private int startNumber = 1;
+    private boolean szor;
 
     public Sequence() {
 
@@ -68,5 +69,13 @@ public class Sequence extends Operation{
 
     public int getStarter() {
         return startNumber;
+    }
+
+    public void setSzor(boolean szor) {
+        this.szor = szor;
+    }
+
+    public boolean getSzor() {
+        return szor;
     }
 }

@@ -11,6 +11,7 @@ public class SequenceOperator {
     private int piece;
 
     public void newSequence(int diff){//0(easy),1(medium),2(hard)
+        sequence.setSzor(false);
         sequence.setStarter(random(1,9));
         if(diff>-1 && diff<3){
             if(diff == 0) createEasy();
@@ -26,10 +27,11 @@ public class SequenceOperator {
         Operation o;
         if(r>0 && r<4){
             o = new Plus(random(1,9));
-        }else if(r>=4 && r<8){
-            o = new Minus(random(1,9));
-        }else{
+        }else if(r>=4 && r<6 && !sequence.getSzor()){
             o = new Szor(random(1,9));
+            sequence.setSzor(true);
+        }else{
+            o = new Minus(random(1,9));
         }
         return o;
     }
