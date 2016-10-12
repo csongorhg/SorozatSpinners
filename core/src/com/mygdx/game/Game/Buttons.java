@@ -1,7 +1,9 @@
 package com.mygdx.game.Game;
 
+import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyScreen;
@@ -10,12 +12,27 @@ import com.mygdx.game.MyScreen;
  * Created by Kicsi on 2016. 10. 07..
  */
 
-public class Buttons {
+public class Buttons extends Group {
 
     private float h = (MyScreen.WORLD_WIDTH)/8f;
 
     private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp;
 
+    private TextField textField = null;
+
+    public void setTarget(TextField textField)
+    {
+        this.textField = textField;
+    }
+
+    private boolean appendText(String s)
+    {
+        if (textField == null) return false;
+        int cp = textField.getCursorPosition();
+        textField.setText(textField.getText().substring(0,cp) + s + textField.getText().substring(cp, textField.getText().length()));
+        textField.setCursorPosition(cp+1);
+        return true;
+    }
 
     public Buttons() {
         b0 = new MyButton("0");
@@ -23,7 +40,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("0");
             }
         });
         b0.setSize(h,h);
@@ -34,7 +51,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("1");
             }
         });
         b1.setSize(h,h);
@@ -45,7 +62,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("2");
             }
         });
         b2.setSize(h,h);
@@ -56,7 +73,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("3");
             }
         });
         b3.setSize(h,h);
@@ -67,7 +84,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("4");
             }
         });
         b4.setSize(h,h);
@@ -78,7 +95,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("5");
             }
         });
         b5.setSize(h,h);
@@ -89,7 +106,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("6");
             }
         });
         b6.setSize(h,h);
@@ -100,7 +117,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("7");
             }
         });
         b7.setSize(h,h);
@@ -111,7 +128,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("8");
             }
         });
         b8.setSize(h,h);
@@ -122,7 +139,7 @@ public class Buttons {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                appendText("9");
             }
         });
         b9.setSize(h,h);
@@ -160,57 +177,20 @@ public class Buttons {
         });
         bHelp.setSize(2*h,h);
         bHelp.setPosition(0f, MyScreen.WORLD_HEIGHT-bHelp.getHeight());
+
+        addActor(b0);
+        addActor(b1);
+        addActor(b2);
+        addActor(b3);
+        addActor(b4);
+        addActor(b5);
+        addActor(b6);
+        addActor(b7);
+        addActor(b8);
+        addActor(b9);
+        addActor(bTorol);
+        addActor(bEnter);
+        addActor(bHelp);
     }
 
-    public TextButton getB0() {
-        return b0;
-    }
-
-    public TextButton getB1() {
-        return b1;
-    }
-
-    public TextButton getB2() {
-        return b2;
-    }
-
-    public TextButton getB3() {
-        return b3;
-    }
-
-    public TextButton getB4() {
-        return b4;
-    }
-
-    public TextButton getB5() {
-        return b5;
-    }
-
-    public TextButton getB6() {
-        return b6;
-    }
-
-    public TextButton getB7() {
-        return b7;
-    }
-
-    public TextButton getB8() {
-        return b8;
-    }
-
-    public TextButton getB9() {
-        return b9;
-    }
-
-    public TextButton getbTorol() {
-        return bTorol;
-    }
-
-    public TextButton getbEnter() {
-        return bEnter;
-    }
-
-    public TextButton getbHelp() {
-        return bHelp;
-    }
 }

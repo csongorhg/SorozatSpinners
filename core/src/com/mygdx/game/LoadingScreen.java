@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
+import com.mygdx.game.Game.GameScreen;
 import com.mygdx.game.Menu.MenuScreen;
 
 /**
@@ -25,6 +26,7 @@ public class LoadingScreen extends MyScreen {
         super.render(delta);
         if (Assets.assetManager.update()) {
             game.setScreen(new MenuScreen(game));
+            //game.setScreen(new GameScreen(game));
         }
         System.out.println("töltés...");
     }

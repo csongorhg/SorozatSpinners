@@ -56,10 +56,6 @@ public class MenuStage extends MyStage {
         textButton2.setSize(250f,60f);
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (1/3f));
         addActor(textButton2);
-        MytextArea_nemjo nemjo;
-        addActor(nemjo = new MytextArea_nemjo("\n    **** COMMODORE 64 BASIC V2 ****\n\n 64K RAM SYSTEM 38911 BASIC BYTES FREE\n\nREADY\n"));
-        setKeyboardFocus(nemjo);
-        nemjo.setCursorPosition(nemjo.getText().length());
     }
 
 
