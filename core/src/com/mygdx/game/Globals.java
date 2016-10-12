@@ -15,7 +15,7 @@ public class Globals {
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 30;
+        parameter.size = 50;
         parameter.characters = CHARS;
         FONT_HOBO_STD = generator.generateFont(parameter);
         FONT_HOBO_STD.setColor(1, 1, 1, 1f);
