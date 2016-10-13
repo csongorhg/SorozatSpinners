@@ -5,12 +5,14 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.matek.SequenceOperator;
 
+import java.util.Scanner;
+
 //gondolom titeket is zavar a for tab  hiánya tessék egy kis "lábjegyzet" : for (int i = 0; i < 10 ; i++){}
 
 
 public class MyGdxGame extends Game {
 	SpriteBatch batch;
-	SequenceOperator sc = new SequenceOperator();//kitörölhetitek ha gáz csak teszt
+	public static SequenceOperator sc = new SequenceOperator();//kitörölhetitek ha gáz csak teszt
 
 	@Override
 	public void create () {
@@ -22,9 +24,11 @@ public class MyGdxGame extends Game {
     private void mathteszt() {
         sc.newSequence(2);
         System.out.println(sc.showIt());
-        System.out.println("kezdő elem: "+sc.getLineNumber(0));
-        System.out.println("6.elem: "+sc.getLineNumber(6));
-    }
+		for (int i=1; i<=6; i++) {
+			System.out.println(i+". elem: "+sc.getLineNumber((i-1)));
+		}
+
+	}
 
     @Override
 	public void pause() {

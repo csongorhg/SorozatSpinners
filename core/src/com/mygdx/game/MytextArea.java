@@ -5,26 +5,20 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Event;
-import com.badlogic.gdx.scenes.scene2d.EventListener;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
-import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.FocusListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.IntArray;
 import com.mygdx.game.Game.Buttons;
-import com.mygdx.game.Game.GameStage;
 
 /**
  * Created by Vince on 2016. 10. 11..
  */
 
-public class MytextArea_nemjo extends TextArea{
+public class MyTextArea extends TextArea{
     static TextArea.TextFieldStyle style;
     IntArray linesBreak;
-    private MytextArea_nemjo me;
+    private MyTextArea me;
     private Buttons buttons;
 
     static {
@@ -48,7 +42,7 @@ public class MytextArea_nemjo extends TextArea{
     }
 
 
-    public MytextArea_nemjo(String s){
+    public MyTextArea(String s){
         super(s,style);
         me = this;
         setWidth(440);

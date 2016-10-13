@@ -11,7 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
  * Created by Vince on 2016. 10. 11..
  */
 
-public class MyTextField_nemjo extends TextField {
+public class MyTextField extends TextField {
     static TextFieldStyle style;
 
     static {
@@ -25,7 +25,7 @@ public class MyTextField_nemjo extends TextField {
         style.cursor.setMinWidth(11);
     }
 
-    public MyTextField_nemjo(String text) {
+    public MyTextField(String text) {
         super(text, style);
         setWidth(MyScreen.WORLD_WIDTH);
         setHeight(MyScreen.WORLD_HEIGHT/2);

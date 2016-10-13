@@ -9,7 +9,6 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
-import com.mygdx.game.MytextArea_nemjo;
 
 /**
  * Created by mordes on 2016.10.05..

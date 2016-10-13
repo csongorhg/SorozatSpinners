@@ -6,7 +6,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.MyButton;
+import com.mygdx.game.MyGdxGame;
 import com.mygdx.game.MyScreen;
+import com.mygdx.game.MyTextArea;
 
 /**
  * Created by Kicsi on 2016. 10. 07..
@@ -150,7 +152,14 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                //compareTo-t, toInteger-t nem ismeri, ezért equals összehasonlítás
+                if ((MyGdxGame.sc.getLineNumber(5)+"").
+                        equals(GameStage.myTextArea2.getText())) {
+                    System.out.println("Helyes megfejtés!");
+                }
+                else {
+                    System.out.println("Helytelen megfejtés!");
+                }
             }
         });
         bEnter.setSize(3*h,h);
@@ -161,7 +170,11 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                if ((GameStage.myTextArea2.getText()).length() > 0) { //nem tud minusz indexen törölni
+                    GameStage.myTextArea2.setText((GameStage.myTextArea2.getText()).substring(0,
+                    (GameStage.myTextArea2.getText()).length()-1));
+                    //törlés hatására visszadobja a string-1 stringet (123 -> 12)
+                }
             }
         });
         bTorol.setSize(3*h,h);

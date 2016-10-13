@@ -1,17 +1,12 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
-import com.badlogic.gdx.graphics.*;
-import com.mygdx.game.MyTextField_nemjo;
-import com.mygdx.game.MytextArea_nemjo;
+import com.mygdx.game.MyTextArea;
+import com.mygdx.game.MyTextField;
 
 /**
  * Created by Kicsi on 2016. 10. 07..
@@ -30,28 +25,25 @@ public class GameStage extends MyStage{
     }
 
     //Buttons buttons;
-    MytextArea_nemjo mytextArea_nemjo, mytextArea_nemjo2;
-    MyTextField_nemjo myTextField_nemjo;
+    public static MyTextArea myTextArea_, myTextArea2;
+    MyTextField myTextField_;
 
     @Override
     protected void init() {
         //addActor(buttons = new Buttons());
-        addActor(mytextArea_nemjo = new MytextArea_nemjo("\n    **** COMMODORE 64 BASIC V2 ****\n\n 64K RAM SYSTEM 38911 BASIC BYTES FREE\n\nREADY\n"));
-        mytextArea_nemjo.setY(200);
-        mytextArea_nemjo.setX(0);
-        mytextArea_nemjo.setWidth(440);
 
-        addActor(mytextArea_nemjo2 = new MytextArea_nemjo("Ide is lehet írni!"));
-        mytextArea_nemjo2.setY(200);
-        mytextArea_nemjo2.setX(450);
-        mytextArea_nemjo2.setWidth(70);
+        addActor(myTextArea2 = new MyTextArea(""));
+        myTextArea2.setY(200);
+        myTextArea2.setX(450);
+        myTextArea2.setWidth(100);
+        myTextArea2.setHeight(100);
 
-        addActor(myTextField_nemjo = new MyTextField_nemjo("Katt ide is!"));
-        myTextField_nemjo.setY(200);
-        myTextField_nemjo.setX(540);
-        myTextField_nemjo.setWidth(100);
-        //buttons.setTarget(mytextArea_nemjo);
-        new Idozito();
+        addActor(myTextField_ = new MyTextField("Katt ide is!"));
+        myTextField_.setY(200);
+        myTextField_.setX(540);
+        myTextField_.setWidth(100);
+        //buttons.setTarget(myTextArea_);
+        //new Idozito();
     }
 
 
