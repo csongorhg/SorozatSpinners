@@ -8,7 +8,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyGdxGame;
 import com.mygdx.game.MyScreen;
-import com.mygdx.game.MyTextArea;
 
 /**
  * Created by Kicsi on 2016. 10. 07..

@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.MyStage;
-import com.mygdx.game.MyTextArea;
+import com.mygdx.game.MytextArea;
 import com.mygdx.game.MyTextField;
 
 /**
@@ -25,14 +25,14 @@ public class GameStage extends MyStage{
     }
 
     //Buttons buttons;
-    public static MyTextArea myTextArea_, myTextArea2;
+    public static MytextArea myTextArea_, myTextArea2;
     MyTextField myTextField_;
 
     @Override
     protected void init() {
         //addActor(buttons = new Buttons());
 
-        addActor(myTextArea2 = new MyTextArea(""));
+        addActor(myTextArea2 = new MytextArea(""));
         myTextArea2.setY(200);
         myTextArea2.setX(450);
         myTextArea2.setWidth(100);

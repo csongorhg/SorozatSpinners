@@ -15,10 +15,10 @@ import com.mygdx.game.Game.Buttons;
  * Created by Vince on 2016. 10. 11..
  */
 
-public class MyTextArea extends TextArea{
+public class MytextArea extends TextArea{
     static TextArea.TextFieldStyle style;
     IntArray linesBreak;
-    private MyTextArea me;
+    private MytextArea me;
     private Buttons buttons;
 
     static {
@@ -42,7 +42,7 @@ public class MyTextArea extends TextArea{
     }
 
 
-    public MyTextArea(String s){
+    public MytextArea(String s){
         super(s,style);
         me = this;
         setWidth(440);

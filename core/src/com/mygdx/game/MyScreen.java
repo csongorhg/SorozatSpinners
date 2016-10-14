@@ -12,7 +12,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
  * Created by mordes on 2016.10.05..
  */
 abstract public class MyScreen implements Screen {
-    public final static float WORLD_WIDTH = 640, WORLD_HEIGHT = 480;
+    public final static float WORLD_WIDTH = Gdx.app.getGraphics().getWidth(), WORLD_HEIGHT = Gdx.app.getGraphics().getHeight();
     protected SpriteBatch spriteBatch = new SpriteBatch();
     protected OrthographicCamera camera = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
     protected ExtendViewport viewport = new ExtendViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
