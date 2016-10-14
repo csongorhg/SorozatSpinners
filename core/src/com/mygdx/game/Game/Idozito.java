@@ -13,14 +13,14 @@ import javax.swing.*;
 
 public class Idozito {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("mm:ss,S");
+    SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
     Timer ido = new Timer(10, new Esemeny());
     GregorianCalendar gc = new GregorianCalendar();
     GregorianCalendar nulla = new GregorianCalendar();
 
     public Idozito() {
         beallit();
-        GameStage.setText(sdf.format(gc.getTime()));
+        GameStage.myStopperTextField.setText(sdf.format(gc.getTime()));
         ido.start();
     }
 
@@ -38,8 +38,11 @@ public class Idozito {
     class Esemeny implements ActionListener{
         public void actionPerformed(ActionEvent e){
             gc.add(Calendar.MILLISECOND, -10);
-            GameStage.setText(sdf.format(gc.getTime()));
-            if(gc.getTimeInMillis() == nulla.getTimeInMillis()) ido.stop();
+            GameStage.myStopperTextField.setText(sdf.format(gc.getTime()));
+            if(gc.getTimeInMillis() == nulla.getTimeInMillis()){
+                ido.stop();
+                System.out.println("lejárt az idő!");
+            }
         }
     }
 }

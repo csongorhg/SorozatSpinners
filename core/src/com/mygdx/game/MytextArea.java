@@ -1,9 +1,12 @@
 package com.mygdx.game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
 import com.badlogic.gdx.scenes.scene2d.utils.FocusListener;
@@ -23,7 +26,16 @@ public class MytextArea extends TextArea{
 
     static {
         style = new TextArea.TextFieldStyle();
+
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/c64a.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        meret.size = 25;
+        meret.characters = Globals.CHARS;
         style.font = Globals.FONT_C64;
+        BitmapFont font = generator.generateFont(meret);
+        generator.dispose();
+        style.font = font;
+
         style.fontColor = Color.valueOf("0088FFFF");//0xRRGGBBAA
         Pixmap p = new Pixmap(1,1, Pixmap.Format.RGBA8888);
 

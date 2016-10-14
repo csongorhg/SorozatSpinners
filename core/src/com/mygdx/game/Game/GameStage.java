@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 import com.mygdx.game.MytextArea;
 import com.mygdx.game.MyTextField;
@@ -25,8 +26,8 @@ public class GameStage extends MyStage{
     }
 
     //Buttons buttons;
-    public static MytextArea myTextArea_, myTextArea2;
-    MyTextField myTextField_;
+    public static MytextArea myTextArea2,myStopperTextField;
+    //public static MyTextField ;
 
     @Override
     protected void init() {
@@ -38,12 +39,16 @@ public class GameStage extends MyStage{
         myTextArea2.setWidth(100);
         myTextArea2.setHeight(100);
 
-        addActor(myTextField_ = new MyTextField("Katt ide is!"));
-        myTextField_.setY(200);
-        myTextField_.setX(540);
-        myTextField_.setWidth(100);
+        myStopperTextField = new MytextArea("");
+        myStopperTextField.setWidth(120);
+        myStopperTextField.setHeight(30);
+
+        myStopperTextField.setPosition(MyScreen.WORLD_WIDTH-myStopperTextField.getWidth()-2, MyScreen.WORLD_HEIGHT-myStopperTextField.getHeight()-2);
+        new Idozito();
+        addActor(myStopperTextField);
+
         //buttons.setTarget(myTextArea_);
-        //new Idozito();
+
     }
 
 
