@@ -26,8 +26,7 @@ public class GameStage extends MyStage{
     }
 
     //Buttons buttons;
-    public static MytextArea myTextArea2,myStopperTextField;
-    //public static MyTextField ;
+    public static MytextArea myTextArea2,myStopperTextArea;
 
     @Override
     protected void init() {
@@ -39,13 +38,13 @@ public class GameStage extends MyStage{
         myTextArea2.setWidth(100);
         myTextArea2.setHeight(100);
 
-        myStopperTextField = new MytextArea("");
-        myStopperTextField.setWidth(120);
-        myStopperTextField.setHeight(30);
+        myStopperTextArea = new MytextArea("");
+        myStopperTextArea.setWidth(120);
+        myStopperTextArea.setHeight(30);
 
-        myStopperTextField.setPosition(MyScreen.WORLD_WIDTH-myStopperTextField.getWidth()-2, MyScreen.WORLD_HEIGHT-myStopperTextField.getHeight()-2);
+        myStopperTextArea.setPosition(MyScreen.WORLD_WIDTH-myStopperTextArea.getWidth()-2, MyScreen.WORLD_HEIGHT-myStopperTextArea.getHeight()-2);
         new Idozito();
-        addActor(myStopperTextField);
+        addActor(myStopperTextArea);
 
         //buttons.setTarget(myTextArea_);
 
