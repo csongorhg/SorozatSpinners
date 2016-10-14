@@ -20,7 +20,7 @@ public class Idozito {
 
     public Idozito() {
         beallit();
-        GameStage.myStopperTextField.setText(sdf.format(gc.getTime()));
+        GameStage.myStopperTextArea.setText(sdf.format(gc.getTime()));
         ido.start();
     }
 
@@ -38,7 +38,7 @@ public class Idozito {
     class Esemeny implements ActionListener{
         public void actionPerformed(ActionEvent e){
             gc.add(Calendar.MILLISECOND, -10);
-            GameStage.myStopperTextField.setText(sdf.format(gc.getTime()));
+            GameStage.myStopperTextArea.setText(sdf.format(gc.getTime()));
             if(gc.getTimeInMillis() == nulla.getTimeInMillis()){
                 ido.stop();
                 System.out.println("lejárt az idő!");
