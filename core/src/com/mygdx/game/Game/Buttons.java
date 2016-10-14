@@ -17,7 +17,8 @@ public class Buttons extends Group {
 
     private float h = (MyScreen.WORLD_WIDTH)/8f;
 
-    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp;
+    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp, bMinus;
+    private boolean minus = false;
 
     private TextField textField = null;
 
@@ -30,7 +31,18 @@ public class Buttons extends Group {
     {
         if (textField == null) return false;
         int cp = textField.getCursorPosition();
-        textField.setText(textField.getText().substring(0,cp) + s + textField.getText().substring(cp, textField.getText().length()));
+        if(s.equals("negativ")){
+            textField.setText("-"+textField.getText().substring(0,cp) + textField.getText().substring(cp, textField.getText().length()));
+        }
+        else if(s.equals("pozitiv")){
+            textField.setText(textField.getText().substring(1,cp) + textField.getText().substring(cp, textField.getText().length()));
+        }
+        else if(s.equals("torol")){
+            textField.setText(textField.getText().substring(0,cp-1) +  textField.getText().substring(cp, textField.getText().length()));
+        }
+        else{
+            textField.setText(textField.getText().substring(0,cp) + s + textField.getText().substring(cp, textField.getText().length()));
+        }
         textField.setCursorPosition(cp+1);
         return true;
     }
@@ -146,6 +158,46 @@ public class Buttons extends Group {
         b9.setSize(h,h);
         b9.setPosition(b8.getWidth(), 0f);
 
+
+        bMinus = new MyButton("-/+");
+        bMinus.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                if(!minus) {
+                    minus = true;
+                    appendText("negativ");
+                }
+                else{
+                    minus = false;
+                    if((GameStage.myTextArea2.getText()).length() > 0) {
+                        appendText("pozitiv");
+                    }
+                }
+            }
+        });
+        bMinus.setSize(h,h);
+        bMinus.setPosition(2*b9.getWidth(), 0f);
+
+        bTorol = new MyButton("Törlés");
+        bTorol.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                if ((GameStage.myTextArea2.getText()).length() == 1) {
+                    appendText("torol");
+                    minus = false;
+                }
+                else if ((GameStage.myTextArea2.getText()).length() > 0) { //nem tud minusz indexen törölni
+                    appendText("torol");
+                    //törlés hatására visszadobja a string-1 stringet (123 -> 12)
+                }
+
+            }
+        });
+        bTorol.setSize(2*h,h);
+        bTorol.setPosition(3*b9.getWidth(), 0f);
+
         bEnter = new MyButton("Enter");
         bEnter.addListener(new ClickListener(){
             @Override
@@ -162,22 +214,7 @@ public class Buttons extends Group {
             }
         });
         bEnter.setSize(3*h,h);
-        bEnter.setPosition(2*b9.getWidth(), 0f);
-
-        bTorol = new MyButton("Törlés");
-        bTorol.addListener(new ClickListener(){
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                super.clicked(event, x, y);
-                if ((GameStage.myTextArea2.getText()).length() > 0) { //nem tud minusz indexen törölni
-                    GameStage.myTextArea2.setText((GameStage.myTextArea2.getText()).substring(0,
-                    (GameStage.myTextArea2.getText()).length()-1));
-                    //törlés hatására visszadobja a string-1 stringet (123 -> 12)
-                }
-            }
-        });
-        bTorol.setSize(3*h,h);
-        bTorol.setPosition(2*b8.getWidth()+bEnter.getWidth(), 0f);
+        bEnter.setPosition(3*b9.getWidth()+bTorol.getWidth(), 0f);
 
         bHelp = new MyButton("Help");
         bHelp.addListener(new ClickListener(){
@@ -200,6 +237,7 @@ public class Buttons extends Group {
         addActor(b7);
         addActor(b8);
         addActor(b9);
+        addActor(bMinus);
         addActor(bTorol);
         addActor(bEnter);
         addActor(bHelp);

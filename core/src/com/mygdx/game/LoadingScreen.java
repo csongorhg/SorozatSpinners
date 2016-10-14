@@ -34,4 +34,9 @@ public class LoadingScreen extends MyScreen {
     public void hide() {
         super.hide();
     }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+    }
 }

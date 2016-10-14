@@ -14,7 +14,7 @@ import com.mygdx.game.MyTextField;
 
 public class GameStage extends MyStage{
 
-    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp;
+    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp, bMinus;
 
     public GameStage(Game game) {
         super(game);

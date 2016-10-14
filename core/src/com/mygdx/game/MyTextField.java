@@ -30,4 +30,5 @@ public class MyTextField extends TextField {
         setWidth(MyScreen.WORLD_WIDTH);
         setHeight(MyScreen.WORLD_HEIGHT/2);
     }
+
 }
