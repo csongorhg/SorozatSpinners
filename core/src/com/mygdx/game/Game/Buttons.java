@@ -17,7 +17,7 @@ public class Buttons extends Group {
 
     private float h = (MyScreen.WORLD_WIDTH)/8f;
 
-    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bTorol, bEnter, bHelp, bMinus;
+    private TextButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bEnter, bTorol , bMinus, bHelp;
     private boolean minus = false;
 
     private TextField textField = null;
@@ -221,7 +221,9 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-
+                GameStage.setHelp();
+                bHelp.setVisible(false);
+                GameStage.setHelpPos();
             }
         });
         bHelp.setSize(2*h,h);
@@ -241,6 +243,8 @@ public class Buttons extends Group {
         addActor(bTorol);
         addActor(bEnter);
         addActor(bHelp);
+
+
     }
 
 }

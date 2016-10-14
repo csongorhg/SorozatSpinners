@@ -1,5 +1,7 @@
 package com.mygdx.game.Game;
 
+import com.badlogic.gdx.Game;
+
 import java.awt.event.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -20,9 +22,10 @@ public class Idozito {
 
     public Idozito() {
         beallit();
-        GameStage.myStopperTextField.setText(sdf.format(gc.getTime()));
+        GameStage.setText(sdf.format(gc.getTime()));
         ido.start();
     }
+
 
     void beallit(){
         gc.set(Calendar.MINUTE, 1);
@@ -38,10 +41,11 @@ public class Idozito {
     class Esemeny implements ActionListener{
         public void actionPerformed(ActionEvent e){
             gc.add(Calendar.MILLISECOND, -10);
-            GameStage.myStopperTextField.setText(sdf.format(gc.getTime()));
+            GameStage.setText(sdf.format(gc.getTime()));
             if(gc.getTimeInMillis() == nulla.getTimeInMillis()){
                 ido.stop();
                 System.out.println("lejárt az idő!");
+                GameScreen.setB();
             }
         }
     }
