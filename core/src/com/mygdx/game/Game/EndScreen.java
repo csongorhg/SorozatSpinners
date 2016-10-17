@@ -1,6 +1,7 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.mygdx.game.MyScreen;
 
 /**
@@ -14,6 +15,7 @@ public class EndScreen extends MyScreen{
     public EndScreen(Game game) {
         super(game);
         endStage = new EndStage(this.viewport, this.spriteBatch, game);
+        Gdx.input.setInputProcessor(endStage);
     }
 
     @Override
