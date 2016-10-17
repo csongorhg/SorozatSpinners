@@ -204,7 +204,7 @@ public class Buttons extends Group {
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
                 //compareTo-t, toInteger-t nem ismeri, ezért equals összehasonlítás
-                if ((MyGdxGame.sc.getLineNumber(5)+"").
+                if ((GameStage.sc.getLineNumber(5)+"").
                         equals(GameStage.myTextArea2.getText())) {
                     System.out.println("Helyes megfejtés!");
                 }

@@ -3,16 +3,14 @@ package com.mygdx.game.Game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.mygdx.game.ButtonToText;
 import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
-import com.mygdx.game.MytextArea;
+import com.mygdx.game.MyTextArea;
 
 /**
  * Created by Kicsi on 2016. 10. 14..
@@ -28,13 +26,13 @@ public class EndStage extends MyStage {
         super(viewport, game);
     }
 
-    private MytextArea textAreaEnd;
+    private MyTextArea textAreaEnd;
     private TextButton bBack;
 
 
     protected void init(){
 
-        addActor(textAreaEnd = new MytextArea("Vége"));
+        addActor(textAreaEnd = new MyTextArea("Vége"));
         textAreaEnd.setWidth(100);
         textAreaEnd.setHeight(50);
         textAreaEnd.setY(MyScreen.WORLD_HEIGHT/2-textAreaEnd.getHeight()/2);
