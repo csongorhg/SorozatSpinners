@@ -6,7 +6,7 @@ package com.mygdx.matek;
 
 public class SequenceOperator {
 
-    Sequence sequence = new Sequence();
+    static Sequence sequence = new Sequence();
     private int numberIntervallumMax = 10;
     private int piece;
 
@@ -72,10 +72,11 @@ public class SequenceOperator {
         }
     }
 
-    public String showIt() {
-        String s = "x "+sequence.toString()+" = ?";
+    static public String showIt() {
+        String s = "x "+sequence.toString()+"= ?";
         return s;
     }
+
 
     public int random(int a,int b){return (int)Math.round(Math.random()*(b-a+1)+a);}
     public int random(int a){return (int)Math.round(Math.random()*a);}

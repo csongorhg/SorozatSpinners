@@ -28,11 +28,15 @@ public class LoadingScreen extends MyScreen {
             game.setScreen(new MenuScreen(game));
             //game.setScreen(new GameScreen(game));
         }
-        System.out.println("töltés...");
     }
 
     @Override
     public void hide() {
         super.hide();
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
     }
 }

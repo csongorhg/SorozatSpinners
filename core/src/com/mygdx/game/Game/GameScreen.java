@@ -11,6 +11,7 @@ import com.mygdx.game.MyScreen;
     public class GameScreen extends MyScreen {
 
         protected GameStage gameStage;
+        private static boolean b = true;
 
         public GameScreen(Game game) {
             super(game);
@@ -24,6 +25,7 @@ import com.mygdx.game.MyScreen;
             super.render(delta);
             gameStage.act(delta);
             gameStage.draw();
+            if(!b) game.setScreen(new EndScreen(game));
         }
 
         @Override
@@ -31,5 +33,7 @@ import com.mygdx.game.MyScreen;
             super.dispose();
             gameStage.dispose();
         }
+
+        public static void setB(){b = false;}
     }
 
