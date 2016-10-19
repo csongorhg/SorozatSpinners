@@ -8,28 +8,38 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyButton;
+import com.mygdx.game.MyLabel;
+import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 
 /**
  * Created by mordes on 2016.10.06..
  */
-public class SettingsStage extends MyStage {
+public class CreditsStage extends MyStage {
 
     private TextButton textButton;
+    private MyLabel myLabel;
 
-    public SettingsStage(Game game) {
+    public CreditsStage(Game game) {
         super(game);
     }
 
-    public SettingsStage(Viewport viewport, Batch batch, Game game) {
+    public CreditsStage(Viewport viewport, Batch batch, Game game) {
         super(viewport, batch, game);
     }
 
-    public SettingsStage(Viewport viewport, Game game) {
+    public CreditsStage(Viewport viewport, Game game) {
         super(viewport, game);
     }
 
     protected void init() {
+
+        myLabel = new MyLabel("Készítették:\nnév\nnév\nnév\nnév");
+        myLabel.setSize(100f,100f);
+        myLabel.setY((MyScreen.WORLD_HEIGHT/2f)-50f);
+        myLabel.setX((MyScreen.WORLD_WIDTH/2f)-50f);
+        addActor(myLabel);
+
         textButton = new MyButton("Vissza");
         textButton.addListener(new ClickListener(){
             @Override
