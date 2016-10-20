@@ -30,7 +30,7 @@ public class Idozito {
     void beallit(){
         gc.set(Calendar.MINUTE, 0);
         gc.set(Calendar.MILLISECOND, 0);
-        gc.set(Calendar.SECOND, 20);
+        gc.set(Calendar.SECOND, 60);
         gc.set(Calendar.HOUR_OF_DAY, 0);
         nulla.set(Calendar.MILLISECOND, 0);
         nulla.set(Calendar.HOUR_OF_DAY, 0);

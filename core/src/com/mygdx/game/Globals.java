@@ -14,11 +14,12 @@ public class Globals {
     public static final BitmapFont FONT_C64;
     public static final Music menumusic = Assets.assetManager.get(Assets.BENDSOUND_ACOUSTICBREEZE);
     public static final Music gamemusic = Assets.assetManager.get(Assets.BENSOUND_CUTE);
+    public static final int size = 50;
 
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 50;
+        parameter.size = size;
         parameter.characters = CHARS;
         FONT_HOBO_STD = generator.generateFont(parameter);
         FONT_HOBO_STD.setColor(1, 1, 1, 1f);

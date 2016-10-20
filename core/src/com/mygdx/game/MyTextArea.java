@@ -14,7 +14,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.FocusListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.IntArray;
 import com.mygdx.game.Game.Buttons;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 /**
  * Created by Vince on 2016. 10. 11..
@@ -31,7 +30,7 @@ public class MyTextArea extends TextArea{
 
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/c64a.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        meret.size = 25;
+        meret.size = Globals.size;
         meret.characters = Globals.CHARS;
         style.font = Globals.FONT_C64;
         BitmapFont font = generator.generateFont(meret);

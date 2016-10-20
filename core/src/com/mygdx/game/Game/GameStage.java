@@ -7,6 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
+import com.mygdx.game.Globals;
 import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
@@ -30,32 +31,16 @@ public class GameStage extends MyStage{
     }
 
     //Buttons buttons;
-    public static MyTextArea myTextArea2,myStopperTextArea;
+    public static MyTextArea myTextArea2;
+    public static MyLabel stopper;
     public static MyTextArea[] elements1_5 = new MyTextArea[5];
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
 
     @Override
     protected void init() {
-        //addActor(buttons = new Buttons());
         myLabel = new MyLabel[5];
         float leftMargin = 15;
-        float currentX = leftMargin;
-        float currentY = 200;
-        sc.newSequence(2);
-
-        for (int i = 0; i < 6; i++) {
-            System.out.println(sc.getLineNumber(i));
-        }
-
-        for (int i = 0; i < myLabel.length; i++) {
-            addActor(myLabel[i] = new MyLabel(sc.getLineNumber(i)+""));
-            myLabel[i].setY(currentY);
-            myLabel[i].setX(currentX);
-            currentX += (MyScreen.WORLD_WIDTH - leftMargin*2)/5;
-            myLabel[i].setWidth(50);
-            myLabel[i].setHeight(25);
-        }
 
         //6. elem
         addActor(myTextArea2 = new MyTextArea(""){
@@ -93,25 +78,55 @@ public class GameStage extends MyStage{
             }
         }
                */
-        myTextArea2.setY(300);
-        myTextArea2.setX(leftMargin);
         myTextArea2.setWidth(MyScreen.WORLD_WIDTH-leftMargin*2);
-        myTextArea2.setHeight(25);
+        myTextArea2.setHeight(Globals.size);
+        myTextArea2.setY(MyScreen.WORLD_HEIGHT/2 );
+        myTextArea2.setX(leftMargin);
+
 
         //stopper
-        myStopperTextArea = new MyTextArea("");
-        myStopperTextArea.setWidth(100);
-        myStopperTextArea.setHeight(25);
-        myStopperTextArea.setTouchable(Touchable.disabled);
-        myStopperTextArea.setPosition(MyScreen.WORLD_WIDTH-myStopperTextArea.getWidth(), MyScreen.WORLD_HEIGHT-myStopperTextArea.getHeight());
+        stopper = new MyLabel("");
+        stopper.setWidth(100);
+        stopper.setHeight(Globals.size);
+        stopper.setPosition(MyScreen.WORLD_WIDTH-stopper.getWidth()-10, MyScreen.WORLD_HEIGHT-10);  //monitoron kilóg, de telefonon nem!!!!!
         new Idozito();
-        addActor(myStopperTextArea);
+        addActor(stopper);
 
-        //buttons.setTarget(myTextArea_);
+
+        float currentX = 0;
+        float currentY = labelHeight();
+        sc.newSequence(2);
+
+        /*for (int i = 0; i < 6; i++) {
+            System.out.println(sc.getLineNumber(i));
+        }*/
+
+        for (int i = 0; i < myLabel.length; i++) {
+            addActor(myLabel[i] = new MyLabel(sc.getLineNumber(i)+""));
+            myLabel[i].setY(currentY);
+            myLabel[i].setX(currentX);
+            currentX += MyScreen.WORLD_WIDTH /5;
+            myLabel[i].setWidth(MyScreen.WORLD_WIDTH /5);
+            myLabel[i].setHeight(Globals.size);
+        }
+
 
     }
 
-    public static void setText(String s){myStopperTextArea.setText(s);}
+    private float labelHeight(){
+        float a=0;
+        a = stopper.getY() - stopper.getHeight();
+        System.out.println(a);
+        System.out.println(Globals.size);
+        System.out.println(stopper.getHeight()+ " "+stopper.getY());
+        a -= myTextArea2.getY();
+        System.out.println(a);
+        a = MyScreen.WORLD_HEIGHT - (a/2+Globals.size/2);
+        System.out.println(a);
+        return a;
+    }
+
+    public static void setText(String s){stopper.setText(s);}
 
 
     @Override
