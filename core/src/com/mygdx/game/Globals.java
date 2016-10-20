@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
@@ -11,6 +12,8 @@ public class Globals {
     public static final String CHARS = "0123456789öüóqwertzuiopőúasdfghjkléáűíyxcvbnm'+!%/=()ÖÜÓQWERTZUIOPŐÚASDFGHJKLÉÁŰÍYXCVBNM?:_*<>#&@{}[],-.";
     public static final BitmapFont FONT_HOBO_STD;
     public static final BitmapFont FONT_C64;
+    public static final Music menumusic = Assets.assetManager.get(Assets.BENDSOUND_ACOUSTICBREEZE);
+    public static final Music gamemusic = Assets.assetManager.get(Assets.BENSOUND_CUTE);
 
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));

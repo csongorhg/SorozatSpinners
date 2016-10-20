@@ -35,5 +35,6 @@ abstract public class MyStage extends Stage {
 
     abstract protected void init();
 
+
 }
 
