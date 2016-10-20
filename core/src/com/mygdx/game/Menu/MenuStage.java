@@ -40,7 +40,7 @@ public class MenuStage extends MyStage {
             }
         });
 
-        textButton2 = new MyButton("Beállítások");
+        textButton2 = new MyButton("Készítők");
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
