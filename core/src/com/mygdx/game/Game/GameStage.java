@@ -25,7 +25,7 @@ public class GameStage extends MyStage{
     }
 
     //Buttons buttons;
-    public static MyTextArea myTextArea2,myStopperTextArea, myTextAreaHelp;
+    public static MyTextArea myTextArea2,myStopperTextArea;
     public static MyTextArea[] elements1_5 = new MyTextArea[5];
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
@@ -70,20 +70,9 @@ public class GameStage extends MyStage{
 
         //buttons.setTarget(myTextArea_);
 
-        //helpdoboz
-        myTextAreaHelp = new MyTextArea("");
-        myTextAreaHelp.setX((MyScreen.WORLD_WIDTH)/8f*2);
-        myTextAreaHelp.setY(MyScreen.WORLD_HEIGHT-(MyScreen.WORLD_WIDTH)/8f);
-        myTextAreaHelp.setWidth(MyScreen.WORLD_WIDTH-(((MyScreen.WORLD_WIDTH)/8f*2)+(myStopperTextArea.getWidth()))-50);
-        myTextAreaHelp.setHeight((MyScreen.WORLD_WIDTH)/8f);
-        myTextAreaHelp.setTouchable(Touchable.disabled);
-        addActor(myTextAreaHelp);
     }
 
     public static void setText(String s){myStopperTextArea.setText(s);}
-
-    public static void setHelp(){myTextAreaHelp.setText(SequenceOperator.showIt());}
-    public static void setHelpPos(){myTextAreaHelp.setX(5);}
 
 
     @Override

@@ -41,6 +41,7 @@ public class PlayStage extends MyStage {
                 super.clicked(event, x, y);
                 difficulty = 1;
                 game.setScreen(new InformationScreen(game));
+
             }
         });
         textButton2.setSize(250f,60f);
