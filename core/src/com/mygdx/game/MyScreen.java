@@ -17,7 +17,7 @@ abstract public class MyScreen implements Screen {
     protected OrthographicCamera camera = new OrthographicCamera(WORLD_WIDTH, WORLD_HEIGHT);
     protected ExtendViewport viewport = new ExtendViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
 
-    public float r=0f,g=0f,b=0f;
+    public float r=0f,g=0.7f,b=0f;
 
     protected Game game;
 

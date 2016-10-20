@@ -31,6 +31,8 @@ public class MenuStage extends MyStage {
 
     public void init()
     {
+
+
         textButton = new MyButton("Játék");
         textButton.addListener(new ClickListener(){
             @Override
