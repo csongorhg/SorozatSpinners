@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.Texture;
  */
 
 //Music: http://www.bensound.com
-    //
 
 public class Assets {
     public static AssetManager assetManager;
