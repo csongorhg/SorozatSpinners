@@ -11,8 +11,10 @@ public class Assets {
 
     public static AssetManager assetManager;
 
-    public static final AssetDescriptor<Texture> BADLOGIC_TEXTURE
-            = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);
+    public static final AssetDescriptor<Texture> greenCheck
+            = new AssetDescriptor<Texture>("greenCheck.png", Texture.class);
+    public static final AssetDescriptor<Texture> redX
+            = new AssetDescriptor<Texture>("redX.png", Texture.class);
 
     public static void prepare() {
         assetManager = new AssetManager();
@@ -20,7 +22,8 @@ public class Assets {
     }
 
     public static void load() {
-        assetManager.load(BADLOGIC_TEXTURE);
+        assetManager.load(greenCheck);
+        assetManager.load(redX);
     }
 
     public static void unload() {

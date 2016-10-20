@@ -1,13 +1,18 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.Assets;
 import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 import com.mygdx.game.MyTextArea;
+import com.mygdx.game.OneSpriteStaticActor;
+import com.mygdx.game.PopupOneSpriteStaticActor;
 import com.mygdx.matek.SequenceOperator;
 
 /**
@@ -53,7 +58,41 @@ public class GameStage extends MyStage{
         }
 
         //6. elem
-        addActor(myTextArea2 = new MyTextArea(""));
+        addActor(myTextArea2 = new MyTextArea(""){
+            @Override
+            public void onSubmit() {
+                if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
+                    System.out.println("Helyes megfejtés!");
+                    addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
+                    {
+                        @Override
+                        protected void init() {
+                            super.init();
+                            setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+                        }
+                    });
+                }
+                else {
+                    System.out.println("Helytelen megfejtés!");
+                    addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
+                    {
+                        @Override
+                        protected void init() {
+                            super.init();
+                            setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+                        }
+                    });
+                }
+            }
+        });
+        /*
+        for (Actor a : getActors()) {
+            if (a instanceof PopupOneSpriteStaticActor)
+            {
+                getActors().removeValue(a,true);
+            }
+        }
+               */
         myTextArea2.setY(300);
         myTextArea2.setX(leftMargin);
         myTextArea2.setWidth(MyScreen.WORLD_WIDTH-leftMargin*2);

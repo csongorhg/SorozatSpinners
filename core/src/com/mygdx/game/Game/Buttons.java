@@ -27,6 +27,11 @@ public class Buttons extends Group {
         this.textField = textField;
     }
 
+    public void onEnterPressed()
+    {
+
+    }
+
     private boolean appendText(String s)
     {
         if (textField == null) return false;
@@ -203,14 +208,15 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+                onEnterPressed();
                 //compareTo-t, toInteger-t nem ismeri, ezért equals összehasonlítás
-                if ((GameStage.sc.getLineNumber(5)+"").
+/*                if ((GameStage.sc.getLineNumber(5)+"").
                         equals(GameStage.myTextArea2.getText())) {
                     System.out.println("Helyes megfejtés!");
                 }
                 else {
                     System.out.println("Helytelen megfejtés!");
-                }
+                }*/
             }
         });
         bEnter.setSize(3*h,h);

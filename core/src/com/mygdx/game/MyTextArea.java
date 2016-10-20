@@ -8,11 +8,13 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
 import com.badlogic.gdx.scenes.scene2d.utils.FocusListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.IntArray;
 import com.mygdx.game.Game.Buttons;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 /**
  * Created by Vince on 2016. 10. 11..
@@ -53,6 +55,10 @@ public class MyTextArea extends TextArea{
         style.selection = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
     }
 
+    public void onSubmit()
+    {
+
+    }
 
     public MyTextArea(String s){
         super(s,style);
@@ -66,6 +72,21 @@ public class MyTextArea extends TextArea{
 
             }
         });
+        addListener(new TextAreaListener()
+        {
+            @Override
+            public boolean keyTyped(InputEvent event, char character) {
+
+                if (event.getKeyCode() == 66)
+                {
+                    onSubmit();
+                }
+                //return super.keyTyped(event, character);
+                return false;
+            }
+
+        });
+
         addListener(new FocusListener() {
             @Override
             public void keyboardFocusChanged(FocusEvent event, Actor actor, boolean focused) {
@@ -73,7 +94,13 @@ public class MyTextArea extends TextArea{
                 if (focused)
                 {
                     if (buttons==null) {
-                        getStage().addActor(buttons = new Buttons());
+                        getStage().addActor(buttons = new Buttons(){
+                            @Override
+                            public void onEnterPressed() {
+                                super.onEnterPressed();
+                                onSubmit();
+                            }
+                        });
                         buttons.setTarget(me);
                     }
                 }
@@ -88,5 +115,7 @@ public class MyTextArea extends TextArea{
         });
 
     }
+
+
 
 }
