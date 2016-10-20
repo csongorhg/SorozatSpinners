@@ -63,7 +63,7 @@ public class GameStage extends MyStage{
             public void onSubmit() {
                 if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
                     System.out.println("Helyes megfejtés!");
-                    addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
+                    addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.greenCheck))
                     {
                         @Override
                         protected void init() {

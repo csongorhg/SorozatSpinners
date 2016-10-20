@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyButton;
+import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 import com.mygdx.game.MyTextArea;
@@ -26,17 +27,17 @@ public class EndStage extends MyStage {
         super(viewport, game);
     }
 
-    private MyTextArea textAreaEnd;
+    private MyLabel labelEnd;
     private TextButton bBack;
 
 
     protected void init(){
 
-        addActor(textAreaEnd = new MyTextArea("Vége"));
-        textAreaEnd.setWidth(100);
-        textAreaEnd.setHeight(50);
-        textAreaEnd.setY(MyScreen.WORLD_HEIGHT/2-textAreaEnd.getHeight()/2);
-        textAreaEnd.setX(MyScreen.WORLD_WIDTH/2-textAreaEnd.getWidth()/2);
+        addActor(labelEnd = new MyLabel("Vége"));
+        labelEnd.setWidth(100);
+        labelEnd.setHeight(50);
+        labelEnd.setY(MyScreen.WORLD_HEIGHT/2-labelEnd.getHeight()/2);
+        labelEnd.setX(MyScreen.WORLD_WIDTH/2-labelEnd.getWidth()/2);
 
         bBack = new MyButton("Vissza a menübe");
         bBack.addListener(new ClickListener(){
