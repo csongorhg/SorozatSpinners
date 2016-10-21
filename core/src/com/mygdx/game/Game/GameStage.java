@@ -36,9 +36,12 @@ public class GameStage extends MyStage{
     public static MyTextArea[] elements1_5 = new MyTextArea[5];
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
+    public static int db = 0;
+    public static Game newGame;
 
     @Override
     protected void init() {
+        newGame = this.game;
         myLabel = new MyLabel[5];
         float leftMargin = 15;
 
@@ -54,6 +57,8 @@ public class GameStage extends MyStage{
                         protected void init() {
                             super.init();
                             setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+                            EndStage.joValasz++;
+                            Idozito.ido.stop();
                         }
                     });
                 }
@@ -65,6 +70,7 @@ public class GameStage extends MyStage{
                         protected void init() {
                             super.init();
                             setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+                            Idozito.ido.stop();
                         }
                     });
                 }
@@ -127,6 +133,9 @@ public class GameStage extends MyStage{
     }
 
     public static void setText(String s){stopper.setText(s);}
+    public static Game getNewGame(){
+        return newGame;
+    }
 
 
     @Override

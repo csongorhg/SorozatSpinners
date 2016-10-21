@@ -29,11 +29,12 @@ public class EndStage extends MyStage {
 
     private MyLabel labelEnd;
     private TextButton bBack;
+    public static int joValasz=0;
 
 
     protected void init(){
 
-        addActor(labelEnd = new MyLabel("Vége"));
+        addActor(labelEnd = new MyLabel("Játék vége\nElért pontszámod: 10/"+joValasz));
         labelEnd.setWidth(100);
         labelEnd.setHeight(50);
         labelEnd.setY(MyScreen.WORLD_HEIGHT/2-labelEnd.getHeight()/2);

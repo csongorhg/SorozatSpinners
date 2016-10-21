@@ -15,10 +15,10 @@ import javax.swing.*;
 
 public class Idozito {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
-    Timer ido = new Timer(10, new Esemeny());
-    GregorianCalendar gc = new GregorianCalendar();
-    GregorianCalendar nulla = new GregorianCalendar();
+    static SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
+    static Timer ido = new Timer(10, new Esemeny());
+    static GregorianCalendar gc = new GregorianCalendar();
+    static GregorianCalendar nulla = new GregorianCalendar();
 
     public Idozito() {
         beallit();
@@ -38,7 +38,7 @@ public class Idozito {
         nulla.set(Calendar.MINUTE, 0);
     }
 
-    class Esemeny implements ActionListener{
+    static class Esemeny implements ActionListener{
         public void actionPerformed(ActionEvent e){
             gc.add(Calendar.MILLISECOND, -10);
             GameStage.setText(sdf.format(gc.getTime()));
