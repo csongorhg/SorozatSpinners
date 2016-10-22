@@ -23,7 +23,7 @@ public class PopupOneSpriteStaticActor extends OneSpriteStaticActor {
         {
             sprite.setSize((elapsedTime/showTimer)*getWidth(), (elapsedTime/showTimer)*getHeight());
             sprite.setPosition(getWidth()/2-sprite.getWidth()/2, getHeight()/2-sprite.getHeight()/2);
-            System.out.println(elapsedTime);
+            //System.out.println(elapsedTime);
         }else{
             if(GameStage.db!=9){GameStage.getNewGame().setScreen(new GameScreen(GameStage.getNewGame())); GameStage.db++;}
             else GameStage.getNewGame().setScreen(new EndScreen(GameStage.getNewGame()));

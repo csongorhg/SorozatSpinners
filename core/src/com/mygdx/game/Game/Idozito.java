@@ -27,10 +27,10 @@ public class Idozito {
     }
 
 
-    void beallit(){
+    static void beallit(){
         gc.set(Calendar.MINUTE, 0);
         gc.set(Calendar.MILLISECOND, 0);
-        gc.set(Calendar.SECOND, 60);
+        gc.set(Calendar.SECOND, 5);
         gc.set(Calendar.HOUR_OF_DAY, 0);
         nulla.set(Calendar.MILLISECOND, 0);
         nulla.set(Calendar.HOUR_OF_DAY, 0);

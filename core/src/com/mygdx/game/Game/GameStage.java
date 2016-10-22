@@ -133,13 +133,8 @@ public class GameStage extends MyStage{
     private float labelHeight(){
         float a=0;
         a = stopper.getY() - stopper.getHeight();
-        System.out.println(a);
-        System.out.println(Globals.size);
-        System.out.println(stopper.getHeight()+ " "+stopper.getY());
         a -= myTextArea2.getY();
-        System.out.println(a);
         a = MyScreen.WORLD_HEIGHT - (a/2+Globals.size/2);
-        System.out.println(a);
         return a;
     }
 
@@ -155,8 +150,6 @@ public class GameStage extends MyStage{
     }
 
     @Override
-    public void dispose() {
-        super.dispose();
-    }
+    public void dispose() {super.dispose(); }
 
 }
