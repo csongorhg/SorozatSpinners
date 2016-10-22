@@ -15,6 +15,7 @@ public class Globals {
     public static final Music menumusic = Assets.assetManager.get(Assets.BENDSOUND_ACOUSTICBREEZE);
     public static final Music gamemusic = Assets.assetManager.get(Assets.BENSOUND_CUTE);
     public static final int size = 50;
+    public static boolean vanHang = true; //ne legyen final!!!!!!!!!!!!!
 
     static {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));

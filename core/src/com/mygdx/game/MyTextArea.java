@@ -30,7 +30,7 @@ public class MyTextArea extends TextArea{
 
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/c64a.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        meret.size = Globals.size;
+        meret.size = Globals.size/2;
         meret.characters = Globals.CHARS;
         style.font = Globals.FONT_C64;
         BitmapFont font = generator.generateFont(meret);

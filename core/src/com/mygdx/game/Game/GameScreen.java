@@ -24,7 +24,7 @@ import com.mygdx.game.MyScreen;
             Gdx.input.setOnscreenKeyboardVisible(false);
             Gdx.input.setInputProcessor(gameStage);
             Globals.menumusic.stop();
-            Globals.gamemusic.play();
+            if(Globals.vanHang)Globals.gamemusic.play();
         }
 
         @Override

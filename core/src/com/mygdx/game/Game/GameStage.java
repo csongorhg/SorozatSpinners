@@ -4,10 +4,13 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
 import com.mygdx.game.Globals;
+import com.mygdx.game.Menu.PlayStage;
 import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
@@ -46,7 +49,7 @@ public class GameStage extends MyStage{
         float leftMargin = 15;
 
         //6. elem
-        addActor(myTextArea2 = new MyTextArea(""){
+        addActor(myTextArea2 = new MyTextArea("A billentyű eléréséhez kattints ide!"){
             @Override
             public void onSubmit() {
                 if (
@@ -57,7 +60,7 @@ public class GameStage extends MyStage{
                 )
                 {
                     if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
-                        System.out.println("Helyes megfejtés!");
+                        //System.out.println("Helyes megfejtés!");
                         addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.greenCheck))
                         {
                             @Override
@@ -70,7 +73,7 @@ public class GameStage extends MyStage{
                         });
                     }
                     else {
-                        System.out.println("Helytelen megfejtés!");
+                        //System.out.println("Helytelen megfejtés!");
                         addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
                         {
                             @Override
@@ -78,6 +81,7 @@ public class GameStage extends MyStage{
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
                                 Idozito.ido.stop();
+                                helyesValasz();
                             }
                         });
                     }
@@ -99,6 +103,13 @@ public class GameStage extends MyStage{
         myTextArea2.setHeight(Globals.size);
         myTextArea2.setY(MyScreen.WORLD_HEIGHT/2 );
         myTextArea2.setX(leftMargin);
+        myTextArea2.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                myTextArea2.setText("");
+            }
+        });
 
 
         //stopper
@@ -112,7 +123,7 @@ public class GameStage extends MyStage{
 
         float currentX = 0;
         float currentY = labelHeight();
-        sc.newSequence(2);
+        sc.newSequence(PlayStage.difficulty);
 
         /*for (int i = 0; i < 6; i++) {
             System.out.println(sc.getLineNumber(i));
@@ -130,8 +141,14 @@ public class GameStage extends MyStage{
 
     }
 
+    public void helyesValasz(){
+        MyLabel l = new MyLabel("A helyes válasz: "+sc.getLineNumber(5));
+        l.setPosition(MyScreen.WORLD_WIDTH/2 - l.getWidth()/2, MyScreen.WORLD_HEIGHT/2 - l.getHeight()/2);
+        addActor(l);
+    }
+
     private float labelHeight(){
-        float a=0;
+        float a;
         a = stopper.getY() - stopper.getHeight();
         a -= myTextArea2.getY();
         a = MyScreen.WORLD_HEIGHT - (a/2+Globals.size/2);
