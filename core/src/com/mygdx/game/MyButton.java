@@ -18,10 +18,10 @@ public class MyButton extends TextButton {
         textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.font = Globals.FONT_HOBO_STD;
 
-        Pixmap p = Buttons.getImg(20,30,false);
+        Pixmap p = Buttons.getImg(300,100,false);
         textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
-        p = Buttons.getImg(200,300,false);
+        p = Buttons.getImg(300,100,true);
         textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
     }
