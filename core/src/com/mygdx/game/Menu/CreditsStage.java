@@ -6,7 +6,6 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
@@ -33,8 +32,7 @@ public class CreditsStage extends MyStage {
     }
 
     protected void init() {
-
-        myLabel = new MyLabel("Készítették:\nnév\nnév\nnév\nnév");
+        myLabel = new MyLabel("Készítették:\nHegedűs Csongor\nEgyed Vince\nHorváth Patrik\nKiss Norbert");
         myLabel.setSize(100f,100f);
         myLabel.setY((MyScreen.WORLD_HEIGHT/2f)-50f);
         myLabel.setX((MyScreen.WORLD_WIDTH/2f)-50f);

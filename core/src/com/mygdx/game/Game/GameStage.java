@@ -68,6 +68,7 @@ public class GameStage extends MyStage{
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
                                 EndStage.joValasz++;
+                                EndStage.jatszottMenet++;
                                 Idozito.ido.stop();
                             }
                         });
@@ -81,13 +82,15 @@ public class GameStage extends MyStage{
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
                                 Idozito.ido.stop();
+                                EndStage.jatszottMenet++;
                                 helyesValasz();
                             }
                         });
                     }
                 }
                 else {
-                    System.out.println("szar input");
+                    //System.out.println("szar input");
+                    myTextArea2.setText("Nem megfelelő tartalmat írtál be!");
                 }
             }
         });
@@ -123,7 +126,7 @@ public class GameStage extends MyStage{
 
         float currentX = 0;
         float currentY = labelHeight();
-        sc.newSequence(PlayStage.difficulty);
+        sc.newSequence(PlayStage.difficulty-1);
 
         /*for (int i = 0; i < 6; i++) {
             System.out.println(sc.getLineNumber(i));

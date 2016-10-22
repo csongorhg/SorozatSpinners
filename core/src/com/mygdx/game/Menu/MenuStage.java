@@ -19,7 +19,7 @@ import com.mygdx.game.OneSpriteStaticActor;
  */
 public class MenuStage extends MyStage {
 
-    private TextButton textButton, textButton2;
+    private TextButton textButton, textButton2, textButton3;
 
 
     public MenuStage(Game game) {
@@ -55,6 +55,7 @@ public class MenuStage extends MyStage {
                 game.setScreen(new CreditsScreen(game));
             }
         });
+
 
         textButton.setSize(250f,60f);
         textButton.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/3f));

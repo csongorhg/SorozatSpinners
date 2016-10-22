@@ -11,7 +11,6 @@ import com.mygdx.game.MyButton;
 import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
-import com.mygdx.game.MyTextArea;
 
 /**
  * Created by Kicsi on 2016. 10. 14..
@@ -30,11 +29,12 @@ public class EndStage extends MyStage {
     private MyLabel labelEnd;
     private TextButton bBack;
     public static int joValasz=0;
+    public static int jatszottMenet = 0;
 
 
     protected void init(){
 
-        addActor(labelEnd = new MyLabel("Játék vége\nElért pontszámod: 10/"+joValasz));
+        addActor(labelEnd = new MyLabel("Játék vége\nElért pontszámod: "+jatszottMenet+"/"+joValasz));
         labelEnd.setWidth(100);
         labelEnd.setHeight(50);
         labelEnd.setY(MyScreen.WORLD_HEIGHT/2-labelEnd.getHeight()/2);
@@ -51,8 +51,8 @@ public class EndStage extends MyStage {
         bBack.setSize(MyScreen.WORLD_WIDTH, 50);
         bBack.setPosition(MyScreen.WORLD_WIDTH/2-bBack.getWidth()/2, 0f);
         addActor(bBack);
-    }
 
+    }
 
 
     @Override

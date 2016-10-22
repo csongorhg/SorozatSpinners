@@ -66,7 +66,7 @@ public class InformationStage extends MyStage{
 
         szovegButton = new ButtonToText(currentDifficultyInformation+
                 "\nA feladatok megoldására 1 perc áll rendelkezésre!\r" +
-                "\n10 feladatra kell válaszolt adni!\r\nSok sikert!");
+                "\n10 feladatra kell választ adni!\r\nSok sikert!");
         szovegButton.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT/2);
         szovegButton.setPosition(MyScreen.WORLD_WIDTH/2 - (szovegButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
         addActor(szovegButton);
