@@ -11,7 +11,7 @@ import java.util.*;
  * Created by Pocok on 2016.10.18..
  */
 
-public class Button {
+public class Buttons {
 
     // --------- A getImg(szélesség,magasság,lenyomott_e) vissza ad egy pixmapot amit fel tudtok használni a buttonnak elvileg bár még én sem teljesen  értem azt a részt ---------
     // ### manuálisan állítható részek ###

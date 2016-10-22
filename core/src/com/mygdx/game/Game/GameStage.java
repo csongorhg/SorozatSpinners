@@ -49,30 +49,41 @@ public class GameStage extends MyStage{
         addActor(myTextArea2 = new MyTextArea(""){
             @Override
             public void onSubmit() {
-                if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
-                    System.out.println("Helyes megfejtés!");
-                    addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.greenCheck))
-                    {
-                        @Override
-                        protected void init() {
-                            super.init();
-                            setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
-                            EndStage.joValasz++;
-                            Idozito.ido.stop();
-                        }
-                    });
+                if (
+                (!getText().equals("\n") && !getText().equals("")) //üres String, enter vizsgálata
+                && (getText().substring(getText().length() == 1 ? 0 : 1 //ha csak 1 hosszú, és az előjel vagy sem
+                    ,getText().length()).matches("[0-9]+")) //számokból áll-e
+                && ((getText().charAt(0) == '-' && getText().length()>1) || (getText().charAt(0)+"").matches("[0-9]+")) //előjel, ha van akkor követi-e érték
+                )
+                {
+                    if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
+                        System.out.println("Helyes megfejtés!");
+                        addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.greenCheck))
+                        {
+                            @Override
+                            protected void init() {
+                                super.init();
+                                setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+                                EndStage.joValasz++;
+                                Idozito.ido.stop();
+                            }
+                        });
+                    }
+                    else {
+                        System.out.println("Helytelen megfejtés!");
+                        addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
+                        {
+                            @Override
+                            protected void init() {
+                                super.init();
+                                setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+                                Idozito.ido.stop();
+                            }
+                        });
+                    }
                 }
                 else {
-                    System.out.println("Helytelen megfejtés!");
-                    addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
-                    {
-                        @Override
-                        protected void init() {
-                            super.init();
-                            setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
-                            Idozito.ido.stop();
-                        }
-                    });
+                    System.out.println("szar input");
                 }
             }
         });

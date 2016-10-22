@@ -34,22 +34,19 @@ public class Buttons extends Group {
 
     private boolean appendText(String s)
     {
-        if (textField == null) return false;
-        int cp = textField.getCursorPosition();
-        if(s.equals("negativ")){
-            textField.setText("-"+textField.getText().substring(0,cp) + textField.getText().substring(cp, textField.getText().length()));
-        }
-        else if(s.equals("pozitiv")){
-            textField.setText(textField.getText().substring(1,cp) + textField.getText().substring(cp, textField.getText().length()));
-        }
-        else if(s.equals("torol")){
-            textField.setText(textField.getText().substring(0,cp-1) +  textField.getText().substring(cp, textField.getText().length()));
-        }
-        else{
-            textField.setText(textField.getText().substring(0,cp) + s + textField.getText().substring(cp, textField.getText().length()));
-        }
-        textField.setCursorPosition(cp+1);
-        return true;
+            if (textField == null) return false;
+            int cp = textField.getCursorPosition();
+            if (s.equals("negativ")) {
+                textField.setText("-" + textField.getText().substring(0, cp) + textField.getText().substring(cp, textField.getText().length()));
+            } else if (s.equals("pozitiv")) {
+                textField.setText(textField.getText().substring(1, cp) + textField.getText().substring(cp, textField.getText().length()));
+            } else if (s.equals("torol")) {
+                textField.setText(textField.getText().substring(0, cp - 1) + textField.getText().substring(cp, textField.getText().length()));
+            } else {
+                textField.setText(textField.getText().substring(0, cp) + s + textField.getText().substring(cp, textField.getText().length()));
+            }
+            textField.setCursorPosition(cp + 1);
+            return true;
     }
 
     public Buttons() {
