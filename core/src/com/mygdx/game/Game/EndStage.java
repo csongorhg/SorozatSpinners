@@ -45,6 +45,9 @@ public class EndStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+                joValasz = 0;
+                jatszottMenet = 0;
+                GameStage.db = 0;
                 game.setScreen(new MenuScreen(game));
             }
         });
