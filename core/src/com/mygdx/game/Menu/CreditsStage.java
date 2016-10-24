@@ -32,7 +32,7 @@ public class CreditsStage extends MyStage {
     }
 
     protected void init() {
-        myLabel = new MyLabel("Készítették:\nHegedűs Csongor\nEgyed Vince\nHorváth Patrik\nKiss Norbert");
+        myLabel = new MyLabel("Készítették:\nHegedüs Csongor\nEgyed Vince\nHorváth Patrik\nKiss Norbert");
         myLabel.setSize(100f,100f);
         myLabel.setY((MyScreen.WORLD_HEIGHT/2f)-50f);
         myLabel.setX((MyScreen.WORLD_WIDTH/2f)-50f);
