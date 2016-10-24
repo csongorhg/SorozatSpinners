@@ -20,9 +20,7 @@ public class MenuScreen extends MyScreen {
         super(game);
         menuStage  = new MenuStage(viewport, spriteBatch, game);
         Gdx.input.setInputProcessor(menuStage);
-        Globals.gamemusic.stop();
-        if(Globals.vanHang)Globals.menumusic.play();
-        else Globals.menumusic.stop();
+
     }
 
     @Override

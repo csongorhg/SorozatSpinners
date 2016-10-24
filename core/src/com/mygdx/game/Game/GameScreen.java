@@ -23,8 +23,6 @@ import com.mygdx.game.MyScreen;
             gameStage = new GameStage(this.viewport, this.spriteBatch, game);
             Gdx.input.setOnscreenKeyboardVisible(false);
             Gdx.input.setInputProcessor(gameStage);
-            Globals.menumusic.stop();
-            if(Globals.vanHang)Globals.gamemusic.play();
         }
 
         @Override

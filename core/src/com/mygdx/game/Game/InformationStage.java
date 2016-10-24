@@ -43,8 +43,8 @@ public class InformationStage extends MyStage{
         super(viewport, batch, game);
     }
 
-    @Override
     protected void init() {
+        super.init();
 
         switch (PlayStage.difficulty) {
             case 1:currentDifficultyInformation = difficultyEasyInformation; break;

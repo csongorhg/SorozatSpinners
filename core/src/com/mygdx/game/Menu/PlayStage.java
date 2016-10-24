@@ -32,8 +32,8 @@ public class PlayStage extends MyStage {
         super(viewport, game);
     }
 
-    @Override
     protected void init() {
+        super.init();
         textButton2 = new MyButton("Könnyű");
         textButton2.addListener(new ClickListener(){
             @Override

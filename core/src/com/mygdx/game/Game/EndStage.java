@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.Globals;
 import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyLabel;
@@ -45,6 +46,7 @@ public class EndStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+                Globals.musicchange = true;
                 joValasz = 0;
                 jatszottMenet = 0;
                 GameStage.db = 0;

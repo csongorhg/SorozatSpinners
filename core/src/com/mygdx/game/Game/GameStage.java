@@ -42,8 +42,9 @@ public class GameStage extends MyStage{
     public static int db = 0;
     public static Game newGame;
 
-    @Override
     protected void init() {
+        Globals.musicchange = false;
+        super.init();
         newGame = this.game;
         myLabel = new MyLabel[5];
         float leftMargin = 15;

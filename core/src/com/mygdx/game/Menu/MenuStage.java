@@ -36,8 +36,7 @@ public class MenuStage extends MyStage {
 
     public void init()
     {
-
-
+        super.init();
         textButton = new MyButton("Játék");
         textButton.addListener(new ClickListener(){
             @Override
@@ -65,19 +64,7 @@ public class MenuStage extends MyStage {
         addActor(textButton2);
 
 
-        OneSpriteStaticActor hang = new OneSpriteStaticActor(Assets.assetManager.get(Globals.vanHang?Assets.SOUND_ICON:Assets.MUTE_ICON));
-        hang.setPosition(0f, 0f);
-        float e = MyScreen.WORLD_HEIGHT/6;
-        hang.setSize(e,e);
-        addActor(hang);
-        hang.addListener(new ClickListener(){
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                super.clicked(event, x, y);
-                Globals.vanHang = !Globals.vanHang;
-                game.setScreen(new MenuScreen(game));
-            }
-        });
+
     }
 
 
