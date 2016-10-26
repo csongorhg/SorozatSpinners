@@ -21,7 +21,7 @@ public class ButtonToText extends TextButton{
     static
     {
         textButtonStyle = new TextButton.TextButtonStyle();
-        textButtonStyle.font = Globals.FONT_HOBO_STD;
+        textButtonStyle.font = Assets.assetManager.get(Assets.FONT_HOBO_STD);
 
         //átméretezés
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));

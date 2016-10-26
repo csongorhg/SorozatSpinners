@@ -1,11 +1,9 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
@@ -14,8 +12,7 @@ import com.mygdx.game.Menu.PlayStage;
 import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
-import com.mygdx.game.MyTextArea;
-import com.mygdx.game.OneSpriteStaticActor;
+import com.mygdx.game.MyTextField;
 import com.mygdx.game.PopupOneSpriteStaticActor;
 import com.mygdx.matek.SequenceOperator;
 
@@ -34,9 +31,9 @@ public class GameStage extends MyStage{
     }
 
     //Buttons buttons;
-    public static MyTextArea myTextArea2;
+    public static MyTextField myTextArea2;
     public static MyLabel stopper;
-    public static MyTextArea[] elements1_5 = new MyTextArea[5];
+    public static MyTextField[] elements1_5 = new MyTextField[5];
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
     public static int db = 0;
@@ -50,7 +47,7 @@ public class GameStage extends MyStage{
         float leftMargin = 15;
 
         //6. elem
-        addActor(myTextArea2 = new MyTextArea("A billentyű eléréséhez kattints ide!"){
+        addActor(myTextArea2 = new MyTextField("A billentyű eléréséhez kattints ide!"){
             @Override
             public void onSubmit() {
                 if (
@@ -84,13 +81,13 @@ public class GameStage extends MyStage{
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
                                 Idozito.ido.stop();
                                 EndStage.jatszottMenet++;
-                                helyesValasz();
+                                //System.out.println(getZIndex());
                             }
                         });
+                        helyesValasz();
                     }
                 }
                 else {
-                    //System.out.println("szar input");
                     myTextArea2.setText("Nem megfelelő tartalmat írtál be!");
                 }
             }
@@ -111,7 +108,16 @@ public class GameStage extends MyStage{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                myTextArea2.setText("");
+                try {
+                    Integer.parseInt(myTextArea2.getText());
+                }
+                catch (Exception e)
+                {
+                    myTextArea2.setText("");
+                }
+/*                if (myTextArea2.getText().compareTo("Nem megfelelő tartalmat írtál be!") == 0  || myTextArea2.getText().compareTo("A billentyű eléréséhez kattints ide!")==0) {
+
+                }*/
             }
         });
 
@@ -120,7 +126,7 @@ public class GameStage extends MyStage{
         stopper = new MyLabel("");
         stopper.setWidth(100);
         stopper.setHeight(Globals.size);
-        stopper.setPosition(MyScreen.WORLD_WIDTH-stopper.getWidth()-10, MyScreen.WORLD_HEIGHT-10);  //monitoron kilóg, de telefonon nem!!!!!
+        stopper.setPosition(getViewport().getWorldWidth()-stopper.getWidth()-10, getViewport().getWorldHeight()- stopper.getHeight()-10);  //monitoron kilóg, de telefonon nem!!!!!
         new Idozito();
         addActor(stopper);
 
@@ -149,6 +155,7 @@ public class GameStage extends MyStage{
         MyLabel l = new MyLabel("A helyes válasz: "+sc.getLineNumber(5));
         l.setPosition(MyScreen.WORLD_WIDTH/2 - l.getWidth()/2, MyScreen.WORLD_HEIGHT/2 - l.getHeight()/2);
         addActor(l);
+        //l.setZIndex(200);
     }
 
     private float labelHeight(){
