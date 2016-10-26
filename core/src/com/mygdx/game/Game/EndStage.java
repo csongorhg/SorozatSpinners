@@ -50,7 +50,7 @@ public class EndStage extends MyStage {
                 Globals.musicchange = true;
                 joValasz = 0;
                 jatszottMenet = 0;
-                GameStage.db = 0;
+
                 game.setScreen(new MenuScreen(game));
             }
         });

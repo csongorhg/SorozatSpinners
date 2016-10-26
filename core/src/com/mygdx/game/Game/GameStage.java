@@ -37,13 +37,11 @@ public class GameStage extends MyStage{
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
     public static int db = 0;
-    public static Game newGame;
     public boolean playing = true;
 
     protected void init() {
         Globals.musicchange = false;
         super.init();
-        newGame = this.game;
         myLabel = new MyLabel[5];
         float leftMargin = 15;
 
@@ -71,6 +69,15 @@ public class GameStage extends MyStage{
                                 playing=false;
                                 //Idozito.ido.stop();
                             }
+
+                            @Override
+                            public void act(float delta) {
+                                super.act(delta);
+                                if (elapsedTime>showTimer)
+                                {
+                                    xy();
+                                }
+                            }
                         });
                     }
                     else {
@@ -85,6 +92,15 @@ public class GameStage extends MyStage{
                                 EndStage.jatszottMenet++;
                                 playing = false;
                                 //System.out.println(getZIndex());
+                            }
+
+                            @Override
+                            public void act(float delta) {
+                                super.act(delta);
+                                if (elapsedTime>showTimer)
+                                {
+                                    xy();
+                                }
                             }
                         });
                         helyesValasz();
@@ -129,8 +145,7 @@ public class GameStage extends MyStage{
         stopper = new MyLabel("ASD");
         stopper.setWidth(100);
         stopper.setHeight(Globals.size);
-        stopper.setPosition(getViewport().getWorldWidth()-stopper.getWidth()-10, getViewport().getWorldHeight()- stopper.getHeight()-10);  //monitoron kilóg, de telefonon nem!!!!!
-        //new Idozito();
+        stopper.setPosition(getViewport().getWorldWidth()-stopper.getWidth()-10, getViewport().getWorldHeight()- stopper.getHeight()-10);
         addActor(stopper);
 
 
@@ -170,9 +185,6 @@ public class GameStage extends MyStage{
     }
 
 
-    public static Game getNewGame(){
-        return newGame;
-    }
 
     @Override
     public void act(float delta) {
@@ -191,6 +203,12 @@ public class GameStage extends MyStage{
             stopper.setText(time + "");
         }
 
+
+    }
+
+    void xy(){
+        if(db!=9){game.setScreen(new GameScreen(game)); db++;}
+        else game.setScreen(new EndScreen(game));
     }
 
     @Override
