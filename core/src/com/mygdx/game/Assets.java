@@ -28,9 +28,9 @@ public class Assets {
 
     static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter_C64 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
     static {
-        fontParameter_HOBO_STD.fontFileName = "font/c64a.ttf";
-        fontParameter_HOBO_STD.fontParameters.size = 25;
-        fontParameter_HOBO_STD.fontParameters.characters = Globals.CHARS;
+        fontParameter_C64.fontFileName = "font/c64a.ttf";
+        fontParameter_C64.fontParameters.size = 25;
+        fontParameter_C64.fontParameters.characters = Globals.CHARS;
     }
 
     public static final AssetDescriptor<BitmapFont> FONT_C64
@@ -39,8 +39,8 @@ public class Assets {
             = new AssetDescriptor<BitmapFont>("alegreyaregular.otf", BitmapFont.class, fontParameter_HOBO_STD);
 
 
-    public static final AssetDescriptor<Texture> BADLOGIC_TEXTURE
-            = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);
+/*    public static final AssetDescriptor<Texture> BADLOGIC_TEXTURE
+            = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);*/
     public static final AssetDescriptor<Texture> redX
             = new AssetDescriptor<Texture>("redX.png", Texture.class);
     public static final AssetDescriptor<Texture> greenCheck
@@ -66,13 +66,16 @@ public class Assets {
         assetManager.setLoader(BitmapFont.class, ".ttf", new FreetypeFontLoader(resolver));
         assetManager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
 
-        assetManager.load(BADLOGIC_TEXTURE);
+        //assetManager.load(BADLOGIC_TEXTURE);
         assetManager.load(redX);
         assetManager.load(greenCheck);
         assetManager.load(BENDSOUND_ACOUSTICBREEZE);
         assetManager.load(BENSOUND_CUTE);
         assetManager.load(SOUND_ICON);
         assetManager.load(MUTE_ICON);
+
+        assetManager.load(FONT_C64);
+        assetManager.load(FONT_HOBO_STD);
     }
 
     public static void unload() {
