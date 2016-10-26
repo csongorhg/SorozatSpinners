@@ -1,6 +1,7 @@
 package com.mygdx.game.Menu;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -56,6 +57,15 @@ public class MenuStage extends MyStage {
             }
         });
 
+        textButton3 = new MyButton("Kilépés");
+        textButton3.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                Gdx.app.exit();
+            }
+        });
+
 
         textButton.setSize(250f,60f);
         textButton.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/3f));
@@ -63,6 +73,9 @@ public class MenuStage extends MyStage {
         textButton2.setSize(250f,60f);
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (1/3f));
         addActor(textButton2);
+        textButton3.setSize(250f,60f);
+        textButton3.setPosition(0f,0f);
+        addActor(textButton3);
 
 
 
