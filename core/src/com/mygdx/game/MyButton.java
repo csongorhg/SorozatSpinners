@@ -18,7 +18,7 @@ public class MyButton extends TextButton {
     static
     {
         textButtonStyle = new TextButton.TextButtonStyle();
-        textButtonStyle.font = Globals.FONT_HOBO_STD;
+        textButtonStyle.font =  Assets.assetManager.get(Assets.FONT_HOBO_STD);
 
         Pixmap p = Buttons.getImg(w,h,false);
         textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
@@ -36,7 +36,7 @@ public class MyButton extends TextButton {
 
     private void reload(){
         textButtonStyle = new TextButton.TextButtonStyle();
-        textButtonStyle.font = Globals.FONT_HOBO_STD;
+        textButtonStyle.font = Assets.assetManager.get(Assets.FONT_HOBO_STD);
 
         Pixmap p = Buttons.getImg(w,h,false);
         textButtonStyle.up = new TextureRegionDrawable(new TextureRegion(new Texture(p)));

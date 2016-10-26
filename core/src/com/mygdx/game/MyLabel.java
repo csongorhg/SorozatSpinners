@@ -16,7 +16,7 @@ public class MyLabel extends Label {
     static
     {
         style = new LabelStyle();
-        style.font = Globals.FONT_HOBO_STD;
+        style.font =  Assets.assetManager.get(Assets.FONT_HOBO_STD);
     }
 
     public MyLabel(String text) {
