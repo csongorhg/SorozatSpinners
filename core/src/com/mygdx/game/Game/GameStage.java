@@ -32,12 +32,13 @@ public class GameStage extends MyStage{
 
     //Buttons buttons;
     public static MyTextField myTextArea2;
-    public static MyLabel stopper;
+    public MyLabel stopper;
     public static MyTextField[] elements1_5 = new MyTextField[5];
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
     public static int db = 0;
     public static Game newGame;
+    public boolean playing = true;
 
     protected void init() {
         Globals.musicchange = false;
@@ -67,7 +68,8 @@ public class GameStage extends MyStage{
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
                                 EndStage.joValasz++;
                                 EndStage.jatszottMenet++;
-                                Idozito.ido.stop();
+                                playing=false;
+                                //Idozito.ido.stop();
                             }
                         });
                     }
@@ -79,8 +81,9 @@ public class GameStage extends MyStage{
                             protected void init() {
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
-                                Idozito.ido.stop();
+                                //Idozito.ido.stop();
                                 EndStage.jatszottMenet++;
+                                playing = false;
                                 //System.out.println(getZIndex());
                             }
                         });
@@ -123,11 +126,11 @@ public class GameStage extends MyStage{
 
 
         //stopper
-        stopper = new MyLabel("");
+        stopper = new MyLabel("ASD");
         stopper.setWidth(100);
         stopper.setHeight(Globals.size);
         stopper.setPosition(getViewport().getWorldWidth()-stopper.getWidth()-10, getViewport().getWorldHeight()- stopper.getHeight()-10);  //monitoron kilóg, de telefonon nem!!!!!
-        new Idozito();
+        //new Idozito();
         addActor(stopper);
 
 
@@ -166,15 +169,28 @@ public class GameStage extends MyStage{
         return a;
     }
 
-    public static void setText(String s){stopper.setText(s);}
+
     public static Game getNewGame(){
         return newGame;
     }
 
-
     @Override
-    public void act() {
-        super.act();
+    public void act(float delta) {
+        super.act(delta);
+        int time = 5 - (int)elapsedTime;
+
+        if (time < 0)
+        {
+            stopper.setText("0");
+            if ( playing) {
+                game.setScreen(new EndScreen(game));
+            }
+        }
+        else
+        {
+            stopper.setText(time + "");
+        }
+
     }
 
     @Override

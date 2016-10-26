@@ -14,7 +14,7 @@ import javax.swing.*;
  */
 
 public class Idozito {
-
+/*
     static SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");
     static Timer ido = new Timer(10, new Esemeny());
     static GregorianCalendar gc = new GregorianCalendar();
@@ -49,4 +49,5 @@ public class Idozito {
             }
         }
     }
+    */
 }

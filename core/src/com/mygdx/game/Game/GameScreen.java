@@ -30,7 +30,7 @@ import com.mygdx.game.MyScreen;
             super.render(delta);
             gameStage.act(delta);
             gameStage.draw();
-            if(!b){ game.setScreen(new EndScreen(game)); b=true;}
+            //if(!b){ game.setScreen(new EndScreen(game)); b=true;}
         }
 
         @Override

@@ -14,6 +14,7 @@ import com.mygdx.game.Menu.MenuScreen;
 public class MyStage extends Stage {
     protected Game game;
     protected OneSpriteStaticActor hang;
+    protected float elapsedTime = 0;
 
     public MyStage(Game game) {
         this.game = game;
@@ -78,5 +79,10 @@ public class MyStage extends Stage {
 
     }
 
+    @Override
+    public void act(float delta) {
+        elapsedTime+=delta;
+        super.act(delta);
+    }
 }
 
