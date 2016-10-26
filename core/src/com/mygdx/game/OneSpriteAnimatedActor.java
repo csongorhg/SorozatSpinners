@@ -31,6 +31,9 @@ public class OneSpriteAnimatedActor extends OneSpriteActor{
     protected void init() {
         super.init();
         setSize(textureAtlas.getRegions().get(0).getRegionWidth(), textureAtlas.getRegions().get(0).getRegionHeight());
+        setX(MyScreen.WORLD_WIDTH/2-getWidth()/2);
+        setY(MyScreen.WORLD_HEIGHT/2-getHeight()/2);
+
     }
 
     public float getFps() {
@@ -47,6 +50,7 @@ public class OneSpriteAnimatedActor extends OneSpriteActor{
         if (running) {
             setFrame(((int) (elapsedTime * fps)));
         }
+        setRotation(360-elapsedTime*100);
     }
 
     public void setFrame(int frame)

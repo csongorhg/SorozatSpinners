@@ -23,10 +23,12 @@ public class LoadingScreen extends MyScreen {
             protected void init() {
                 super.init();
                 setFps(12);
-                setWidth(WORLD_WIDTH);
-                setHeight(WORLD_HEIGHT);
             }
         });
+        final OneSpriteStaticActor text = new OneSpriteStaticActor("justszoveg.png");
+        text.setX(WORLD_WIDTH/2-text.getWidth()/2);
+        text.setY(WORLD_HEIGHT/2-text.getHeight()/2);
+        stage.addActor(text);
     }
 
     @Override
@@ -39,7 +41,7 @@ public class LoadingScreen extends MyScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
-        if (elapsedTime > 2.0 && Assets.assetManager.update()) {
+        if (elapsedTime > 3.0 && Assets.assetManager.update()) {
             //Assets.afterLoaded();
             game.setScreen(new MenuScreen(game));
         }

@@ -45,7 +45,7 @@ public class Idozito {
             if(gc.getTimeInMillis() == nulla.getTimeInMillis()){
                 ido.stop();
                 //System.out.println("lejárt az idő!");
-                GameScreen.setB();
+                //GameScreen.setB();
             }
         }
     }
