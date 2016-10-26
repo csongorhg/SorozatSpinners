@@ -14,9 +14,21 @@ public class SequenceOperator {
         sequence.setSzor(false);
         sequence.setStarter(random(1,9));
         if(diff>-1 && diff<3){
-            if(diff == 0) createEasy();
-            else if(diff == 1) createMedium();
-            else createHard();
+            if(diff == 0){
+                do{
+                    createEasy();
+                }while(getLineNumber(6)>200 || getLineNumber(6)<-200);
+            }
+            else if(diff == 1){
+                do{
+                    createMedium();
+                }while(getLineNumber(6)>1000 || getLineNumber(6)<-1000);
+            }
+            else {
+                do{
+                    createHard();
+                }while(getLineNumber(6)>10000 || getLineNumber(6)<-10000);
+            }
         }else{
             System.out.println("Hiba a műveletkészítéskor: Rossz nehézség");
         }
