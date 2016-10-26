@@ -54,6 +54,7 @@ public class SequenceOperator {
         for (int i = 0; i < whitch ; i++){
             beforeAnswer = answer;
             answer = sequence.getAnswer(beforeAnswer);
+            System.out.println(4);
         }
         return answer;
     }
