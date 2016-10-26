@@ -36,8 +36,10 @@ public class GameStage extends MyStage{
     public static MyTextField[] elements1_5 = new MyTextField[5];
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
-    public static int db = 0;
+    public static int db = 0, jatszottMenet = 0, joValasz=0;
     public boolean playing = true;
+
+    private int ido = 60;
 
     protected void init() {
         Globals.musicchange = false;
@@ -64,8 +66,8 @@ public class GameStage extends MyStage{
                             protected void init() {
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
-                                EndStage.joValasz++;
-                                EndStage.jatszottMenet++;
+                                joValasz++;
+                                jatszottMenet++;
                                 playing=false;
                                 //Idozito.ido.stop();
                             }
@@ -89,7 +91,7 @@ public class GameStage extends MyStage{
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
                                 //Idozito.ido.stop();
-                                EndStage.jatszottMenet++;
+                                jatszottMenet++;
                                 playing = false;
                                 //System.out.println(getZIndex());
                             }
@@ -189,12 +191,15 @@ public class GameStage extends MyStage{
     @Override
     public void act(float delta) {
         super.act(delta);
-        int time = 5 - (int)elapsedTime;
+        int time = ido - (int)elapsedTime;
+
+        if(time <=10) stopper.setColor(1f,0f,0f, 1f);
 
         if (time < 0)
         {
             stopper.setText("0");
-            if ( playing) {
+            if (playing) {
+                jatszottMenet++;
                 game.setScreen(new EndScreen(game));
             }
         }
@@ -210,6 +215,16 @@ public class GameStage extends MyStage{
         if(db!=9){game.setScreen(new GameScreen(game)); db++;}
         else game.setScreen(new EndScreen(game));
     }
+
+    public static int getJoValasz() {
+        return joValasz;
+    }
+
+    public static int getJatszottMenet() {
+        return jatszottMenet;
+    }
+
+    public static void vissza(){db = 0; jatszottMenet=0; joValasz=0;}
 
     @Override
     public void dispose() {super.dispose(); }

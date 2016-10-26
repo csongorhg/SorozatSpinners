@@ -19,7 +19,7 @@ import com.mygdx.game.MyScreen;
 
         public GameScreen(Game game) {
             super(game);
-            gameStage = new GameStage(this.viewport, this.spriteBatch, game);
+            gameStage = new GameStage(viewport, spriteBatch, game);
             Gdx.input.setOnscreenKeyboardVisible(false);
             Gdx.input.setInputProcessor(gameStage);
         }

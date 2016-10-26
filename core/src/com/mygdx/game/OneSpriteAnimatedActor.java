@@ -31,6 +31,7 @@ public class OneSpriteAnimatedActor extends OneSpriteActor{
     protected void init() {
         super.init();
         setSize(textureAtlas.getRegions().get(0).getRegionWidth(), textureAtlas.getRegions().get(0).getRegionHeight());
+        //setSize(Globals.loadingScreenSize, Globals.loadingScreenSize);
         setX(MyScreen.WORLD_WIDTH/2-getWidth()/2);
         setY(MyScreen.WORLD_HEIGHT/2-getHeight()/2);
 

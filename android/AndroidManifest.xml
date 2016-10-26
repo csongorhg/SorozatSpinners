@@ -8,7 +8,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/GBS"
+        android:icon="@drawable/gbs"
         android:label="@string/app_name"
         android:theme="@style/GdxTheme" >
         <activity

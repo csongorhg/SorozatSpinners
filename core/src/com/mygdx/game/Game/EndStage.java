@@ -29,13 +29,11 @@ public class EndStage extends MyStage {
 
     private MyLabel labelEnd;
     private TextButton bBack;
-    public static int joValasz=0;
-    public static int jatszottMenet = 0;
 
 
     protected void init(){
 
-        addActor(labelEnd = new MyLabel("Játék vége\nElért pontszámod: "+jatszottMenet+"/"+joValasz));
+        addActor(labelEnd = new MyLabel("Játék vége\nElért pontszámod: "+GameStage.getJatszottMenet()+"/"+GameStage.getJoValasz()));
         labelEnd.setWidth(100);
         labelEnd.setHeight(50);
         labelEnd.setY(MyScreen.WORLD_HEIGHT/2-labelEnd.getHeight()/2);
@@ -48,9 +46,7 @@ public class EndStage extends MyStage {
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
                 Globals.musicchange = true;
-                joValasz = 0;
-                jatszottMenet = 0;
-
+                GameStage.vissza();
                 game.setScreen(new MenuScreen(game));
             }
         });
