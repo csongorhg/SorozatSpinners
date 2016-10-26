@@ -52,7 +52,8 @@ public class InformationStage extends MyStage{
             case 3:currentDifficultyInformation = difficultyHardInformation; break;
         }
 
-        textButton2 = new MyButton("Teszt indítása!");
+        MyButton.setSize(600,60);
+        textButton2 = new MyButton("Teszt indítása!",true);
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -71,7 +72,8 @@ public class InformationStage extends MyStage{
         szovegButton.setPosition(MyScreen.WORLD_WIDTH/2 - (szovegButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
         addActor(szovegButton);
 
-        textButton = new MyButton("Vissza");
+        MyButton.setSize(170,60);
+        textButton = new MyButton("Vissza",true);
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {

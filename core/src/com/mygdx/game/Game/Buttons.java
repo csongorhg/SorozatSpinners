@@ -50,7 +50,8 @@ public class Buttons extends Group {
     }
 
     public Buttons() {
-        b0 = new MyButton("0");
+        MyButton.setSize((int)h,(int)h);
+        b0 = new MyButton("0",true);
         b0.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -61,7 +62,7 @@ public class Buttons extends Group {
         b0.setSize(h,h);
         b0.setPosition(0f, b0.getHeight());
 
-        b1 = new MyButton("1");
+        b1 = new MyButton("1",true);
         b1.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -72,7 +73,7 @@ public class Buttons extends Group {
         b1.setSize(h,h);
         b1.setPosition(b0.getWidth(), b1.getHeight());
 
-        b2 = new MyButton("2");
+        b2 = new MyButton("2",true);
         b2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -83,7 +84,7 @@ public class Buttons extends Group {
         b2.setSize(h,h);
         b2.setPosition(2*(b1.getWidth() ), b2.getHeight());
 
-        b3 = new MyButton("3");
+        b3 = new MyButton("3",true);
         b3.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -94,7 +95,7 @@ public class Buttons extends Group {
         b3.setSize(h,h);
         b3.setPosition(3*(b2.getWidth() ), b3.getHeight());
 
-        b4 = new MyButton("4");
+        b4 = new MyButton("4",true);
         b4.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -105,7 +106,7 @@ public class Buttons extends Group {
         b4.setSize(h,h);
         b4.setPosition(4*(b3.getWidth() ), b4.getHeight());
 
-        b5 = new MyButton("5");
+        b5 = new MyButton("5",true);
         b5.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -116,7 +117,7 @@ public class Buttons extends Group {
         b5.setSize(h,h);
         b5.setPosition(5*(b4.getWidth() ), b5.getHeight());
 
-        b6 = new MyButton("6");
+        b6 = new MyButton("6",true);
         b6.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -127,7 +128,7 @@ public class Buttons extends Group {
         b6.setSize(h,h);
         b6.setPosition(6*(b5.getWidth() ), b6.getHeight());
 
-        b7 = new MyButton("7");
+        b7 = new MyButton("7",true);
         b7.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -138,7 +139,7 @@ public class Buttons extends Group {
         b7.setSize(h,h);
         b7.setPosition(7*(b6.getWidth()), b7.getHeight());
 
-        b8 = new MyButton("8");
+        b8 = new MyButton("8",true);
         b8.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -149,7 +150,7 @@ public class Buttons extends Group {
         b8.setSize(h,h);
         b8.setPosition(0f, 0f);
 
-        b9 = new MyButton("9");
+        b9 = new MyButton("9",true);
         b9.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -161,7 +162,7 @@ public class Buttons extends Group {
         b9.setPosition(b8.getWidth(), 0f);
 
 
-        bMinus = new MyButton("-/+");
+        bMinus = new MyButton("-/+",true);
         bMinus.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -181,7 +182,8 @@ public class Buttons extends Group {
         bMinus.setSize(h,h);
         bMinus.setPosition(2*b9.getWidth(), 0f);
 
-        bTorol = new MyButton("Törlés");
+        MyButton.setSize((int)h*2,(int)h);
+        bTorol = new MyButton("Törlés",true);
         bTorol.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -200,7 +202,8 @@ public class Buttons extends Group {
         bTorol.setSize(2*h,h);
         bTorol.setPosition(3*b9.getWidth(), 0f);
 
-        bEnter = new MyButton("Enter");
+        MyButton.setSize((int)h*3,(int)h);
+        bEnter = new MyButton("Enter",true);
         bEnter.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {

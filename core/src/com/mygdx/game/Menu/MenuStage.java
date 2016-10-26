@@ -37,7 +37,8 @@ public class MenuStage extends MyStage {
     public void init()
     {
         super.init();
-        textButton = new MyButton("Játék");
+        MyButton.setSize(250,60);
+        textButton = new MyButton("Játék",true);
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -46,7 +47,7 @@ public class MenuStage extends MyStage {
             }
         });
 
-        textButton2 = new MyButton("Készítők");
+        textButton2 = new MyButton("Készítők",true);
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {

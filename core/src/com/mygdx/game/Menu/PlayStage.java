@@ -34,7 +34,8 @@ public class PlayStage extends MyStage {
 
     protected void init() {
         super.init();
-        textButton2 = new MyButton("Könnyű");
+        MyButton.setSize(250,60);
+        textButton2 = new MyButton("Könnyű",true);
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -49,7 +50,7 @@ public class PlayStage extends MyStage {
         addActor(textButton2);
 
 
-        textButton3 = new MyButton("Közepes");
+        textButton3 = new MyButton("Közepes",true);
         textButton3.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -63,7 +64,7 @@ public class PlayStage extends MyStage {
         addActor(textButton3);
 
 
-        textButton4 = new MyButton("Nehéz");
+        textButton4 = new MyButton("Nehéz",true);
         textButton4.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -76,8 +77,8 @@ public class PlayStage extends MyStage {
         textButton4.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton4.getWidth()/2),MyScreen.WORLD_HEIGHT * (1/4f));
         addActor(textButton4);
 
-
-        textButton = new MyButton("Vissza");
+        MyButton.setSize(170,60);
+        textButton = new MyButton("Vissza",true);
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {

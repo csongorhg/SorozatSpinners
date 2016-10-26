@@ -22,14 +22,14 @@ public class Buttons {
     private static int diff = 25;
 
     //a normal nem lenyomott gomb árnyalatai
-    private static int r = 250;
-    private static int g = 200;
-    private static int b = 20;
+    private static int r = 73;
+    private static int g = 172;
+    private static int b = 45;
 
     //a lenyomott gomb árnyalatai
-    private static int rA = 250;
-    private static int gA = 125;
-    private static int bA = 20;
+    private static int rA = 79;
+    private static int gA = 179;
+    private static int bA = 70;
 
     // ### eddig ###
 

@@ -39,7 +39,8 @@ public class CreditsStage extends MyStage {
         myLabel.setX((MyScreen.WORLD_WIDTH/2f)-50f);
         addActor(myLabel);
 
-        textButton = new MyButton("Vissza");
+        MyButton.setSize(200,60);
+        textButton = new MyButton("Vissza",true);
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
