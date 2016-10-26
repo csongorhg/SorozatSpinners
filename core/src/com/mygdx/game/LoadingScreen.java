@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.mygdx.game.Game.GameScreen;
 import com.mygdx.game.Menu.MenuScreen;
 
@@ -9,9 +10,23 @@ import com.mygdx.game.Menu.MenuScreen;
  */
 public class LoadingScreen extends MyScreen {
 
+    Stage stage;
+    private float elapsedTime = 0;
+
     public LoadingScreen(Game game) {
         super(game);
-        setBackGroundColor(1f,1f,1f);
+        setBackGroundColor(0f,0f,0f);
+        stage = new Stage(viewport, spriteBatch);
+        stage.addActor(new OneSpriteAnimatedActor("load.txt")
+        {
+            @Override
+            protected void init() {
+                super.init();
+                setFps(12);
+                setWidth(WORLD_WIDTH);
+                setHeight(WORLD_HEIGHT);
+            }
+        });
     }
 
     @Override
@@ -24,10 +39,13 @@ public class LoadingScreen extends MyScreen {
     @Override
     public void render(float delta) {
         super.render(delta);
-        if (Assets.assetManager.update()) {
+        if (elapsedTime > 2.0 && Assets.assetManager.update()) {
+            Assets.afterLoaded();
             game.setScreen(new MenuScreen(game));
-            //game.setScreen(new GameScreen(game));
         }
+        elapsedTime += delta;
+        stage.act(delta);
+        stage.draw();
     }
 
     @Override

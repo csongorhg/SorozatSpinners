@@ -57,7 +57,7 @@ public class MenuStage extends MyStage {
             }
         });
 
-        textButton3 = new MyButton("Kilépés");
+        textButton3 = new MyButton("Kilépés",true);
         textButton3.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
