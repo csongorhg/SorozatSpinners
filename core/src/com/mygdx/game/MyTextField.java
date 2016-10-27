@@ -23,7 +23,6 @@ import com.mygdx.game.Game.Buttons;
 
 public class MyTextField extends TextField {
     static TextArea.TextFieldStyle style;
-    IntArray linesBreak;
     private MyTextField me;
     private Buttons buttons;
 
@@ -46,16 +45,16 @@ public class MyTextField extends TextField {
         style.fontColor = new Color(getColor(98),getColor(185),getColor(63),1f);
         Pixmap p = new Pixmap(1,1, Pixmap.Format.RGBA8888);
 
-        p.setColor(new Color(getColor(98),getColor(185),getColor(63),1f));//0xRRGGBBAA
+        p.setColor(new Color(getColor(98),getColor(185),getColor(63),1f));
         p.fill();
         style.cursor = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
         style.cursor.setMinWidth(20);
 
-        p.setColor(new Color(getColor(121),getColor(192),getColor(57),0.2f));//0xRRGGBBAA
+        p.setColor(new Color(getColor(121),getColor(192),getColor(57),0.2f));
         p.fill();
         style.background = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
-        p.setColor(new Color(getColor(121),getColor(192),getColor(57),1f));//0xRRGGBBAA
+        p.setColor(new Color(getColor(121),getColor(192),getColor(57),1f));
         p.fill();
         style.selection = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
     }
@@ -78,13 +77,11 @@ public class MyTextField extends TextField {
         Gdx.input.setCursorCatched(true);
         Gdx.input.setCursorPosition(100,100);
         Gdx.input.setOnscreenKeyboardVisible(false);
-        //debug();
-        /*setOnscreenKeyboard(new OnscreenKeyboard() {
+        setOnscreenKeyboard(new OnscreenKeyboard() {
             @Override
             public void show(boolean visible) {
-                System.out.println(1);
             }
-        });*/
+        });
 
 
         addListener(new InputListener() {
@@ -97,9 +94,7 @@ public class MyTextField extends TextField {
                 int cp = getCursorPosition();
                 for (int j = 0; j<s.length(); j++) {
                     k = true;
-                    //System.out.println(k);
                     for (int i = 0; i < inputmask.length(); i++) {
-                        //System.out.println(i);
                         if (s.charAt(j) == inputmask.charAt(i))
                         {
                             k = false;
@@ -117,7 +112,6 @@ public class MyTextField extends TextField {
                         s = cc;
                         j--;
                     }
-                    //System.out.printf(s);
                 }
                 setText(s);
                 setCursorPosition(cp);
@@ -125,7 +119,6 @@ public class MyTextField extends TextField {
                 {
                     onSubmit();
                 }
-                //return super.keyTyped(event, character);
                 return false;
             }
 
