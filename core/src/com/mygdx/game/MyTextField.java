@@ -99,7 +99,7 @@ public class MyTextField extends TextField {
                     k = true;
                     //System.out.println(k);
                     for (int i = 0; i < inputmask.length(); i++) {
-                        System.out.println(i);
+                        //System.out.println(i);
                         if (s.charAt(j) == inputmask.charAt(i))
                         {
                             k = false;

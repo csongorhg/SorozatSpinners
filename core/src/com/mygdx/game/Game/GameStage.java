@@ -173,7 +173,7 @@ public class GameStage extends MyStage{
 
         for (int i = 0; i < myLabel.length; i++) {
             addActor(myLabel[i] = new MyLabel(sc.getLineNumber(i)+""));
-            System.out.println(currentY);
+            //System.out.println(currentY);
             myLabel[i].setY(currentY);
             myLabel[i].setX(currentX);
             currentX += MyScreen.WORLD_WIDTH /5;
@@ -208,9 +208,8 @@ public class GameStage extends MyStage{
         });
 
         help = new MyLabel("");
-        help.setSize(3*Globals.hangMagassag, Globals.hangMagassag);
+        help.setSize(MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX())), Globals.hangMagassag);
         help.setPosition(kerdojel.getX()+kerdojel.getWidth(), MyScreen.WORLD_HEIGHT-help.getHeight());
-        System.out.println(kerdojel.getX()+kerdojel.getWidth());
         addActor(help);
 
     }
