@@ -40,7 +40,7 @@ public class Assets {
 
 
 /*    public static final AssetDescriptor<Texture> BADLOGIC_TEXTURE
-            = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);*/
+            = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);*///
     public static final AssetDescriptor<Texture> redX
             = new AssetDescriptor<Texture>("redX.png", Texture.class);
     public static final AssetDescriptor<Texture> greenCheck
