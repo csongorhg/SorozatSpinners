@@ -192,9 +192,7 @@ public class GameStage extends MyStage{
     public void act(float delta) {
         super.act(delta);
         int time = ido - (int)elapsedTime;
-
         if(time <=10) stopper.setColor(1f,0f,0f, 1f);
-
         if (time < 0)
         {
             stopper.setText("0");
@@ -207,13 +205,14 @@ public class GameStage extends MyStage{
         {
             stopper.setText(time + "");
         }
-
-
     }
 
     void xy(){
-        if(db!=9){game.setScreen(new GameScreen(game)); db++;}
-        else game.setScreen(new EndScreen(game));
+        if(db!=9){
+            game.setScreen(new GameScreen(game));
+            db++;
+        }else
+            game.setScreen(new EndScreen(game));
     }
 
     public static int getJoValasz() {
