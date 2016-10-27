@@ -64,8 +64,8 @@ public class MyTextField extends TextField {
     public MyTextField(String s){
         super(s,style);
         me = this;
-        setWidth(440);
-        setHeight(150);
+        setWidth((int)(MyScreen.WORLD_HEIGHT*0.8));
+        setHeight((int)(MyScreen.WORLD_HEIGHT*0.03));
         //debug();
         /*setOnscreenKeyboard(new OnscreenKeyboard() {
             @Override
