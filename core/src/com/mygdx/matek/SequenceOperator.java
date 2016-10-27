@@ -16,18 +16,21 @@ public class SequenceOperator {
         if(diff>-1 && diff<3){
             if(diff == 0){
                 do{
+                    System.out.println("Könnyű nehézség generálva!");
                     createEasy();
-                }while(getLineNumber(6)>200 || getLineNumber(6)<-200);
+                }while(getLineNumber(6)>=200 && getLineNumber(6)<=-200);
             }
             else if(diff == 1){
                 do{
+                    System.out.println("Közepes nehézség generálva!");
                     createMedium();
-                }while(getLineNumber(6)>1000 || getLineNumber(6)<-1000);
+                }while(getLineNumber(6)>=1000 && getLineNumber(6)<=-1000);
             }
             else {
                 do{
+                    System.out.println("Nehéz nehézség generálva!");
                     createHard();
-                }while(getLineNumber(6)>10000 || getLineNumber(6)<-10000);
+                }while(getLineNumber(6)>=10000 && getLineNumber(6)<=-10000);
             }
         }else{
             System.out.println("Hiba a műveletkészítéskor: Rossz nehézség");
@@ -54,7 +57,7 @@ public class SequenceOperator {
         for (int i = 0; i < whitch ; i++){
             beforeAnswer = answer;
             answer = sequence.getAnswer(beforeAnswer);
-            System.out.println(4);
+            //System.out.println(4);
         }
         return answer;
     }
