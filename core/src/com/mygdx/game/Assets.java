@@ -22,14 +22,14 @@ public class Assets {
     static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter_HOBO_STD = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
     static {
         fontParameter_HOBO_STD.fontFileName = "alegreyaregular.otf";
-        fontParameter_HOBO_STD.fontParameters.size = Globals.size;
+        fontParameter_HOBO_STD.fontParameters.size = (int)(MyScreen.WORLD_HEIGHT*0.1);
         fontParameter_HOBO_STD.fontParameters.characters = Globals.CHARS;
     }
 
     static final FreetypeFontLoader.FreeTypeFontLoaderParameter fontParameter_C64 = new FreetypeFontLoader.FreeTypeFontLoaderParameter();
     static {
         fontParameter_C64.fontFileName = "font/c64a.ttf";
-        fontParameter_C64.fontParameters.size = 25;
+        fontParameter_C64.fontParameters.size = (int)(MyScreen.WORLD_HEIGHT*0.05);
         fontParameter_C64.fontParameters.characters = Globals.CHARS;
     }
 

@@ -65,7 +65,6 @@ abstract public class MyScreen implements Screen {
 
     @Override
     public void show() {
-
     }
 
     public Game getGame() {

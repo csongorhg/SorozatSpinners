@@ -1,8 +1,12 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -24,14 +28,12 @@ import com.mygdx.game.MyStage;
 public class InformationStage extends MyStage{
 
     private TextButton textButton,textButton2;
+    private ButtonToText buttonToText;
     private MyLabel szovegLabel;
 
-    private static String difficultyEasyInformation = "Könnyű szint!\r\nEgyes feladványok 1 vagy 2 műveletet tartalmaznak!\r" +
-            "\nA feladatok nem tartalmaznak zárójelet!\r",
-            difficultyMediumInformation = "Közepes szint!\r\nEgyes feladványok 1, 2 vagy 3 műveletet tartalmaznak!\r" +
-            "\nA feladatok tartalmazhatnak zárójelet!\r",
-            difficultyHardInformation = "Nehéz szint!\r\nEgyes feladványok 2 vagy 3 műveletet tartalmaznak!\r"+
-            "\nA feladatok tartalmazhatnak zárójelet!",
+    private static String difficultyEasyInformation = "Könnyű szint!\r\nEgyes feladványok 1 vagy 2 műveletet tartalmaznak!\r",
+            difficultyMediumInformation = "Közepes szint!\r\nEgyes feladványok 1, 2 vagy 3 műveletet tartalmaznak!\r",
+            difficultyHardInformation = "Nehéz szint!\r\nEgyes feladványok 2 vagy 3 műveletet tartalmaznak!\r",
             currentDifficultyInformation;
 
 
@@ -69,12 +71,12 @@ public class InformationStage extends MyStage{
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton2.getWidth()/2), MyScreen.WORLD_HEIGHT - (2*Globals.hangMagassag));
         addActor(textButton2);
 
-        szovegLabel = new MyLabel(currentDifficultyInformation+
+        buttonToText = new ButtonToText(currentDifficultyInformation+
                 "\nA feladatok megoldására 1 perc áll rendelkezésre!\r" +
                 "\n10 feladatra kell választ adni!\r\nSok sikert!");
-        szovegLabel.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT/2);
-        szovegLabel.setPosition(MyScreen.WORLD_WIDTH/2 - (szovegLabel.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
-        addActor(szovegLabel);
+        buttonToText.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT/2);
+        buttonToText.setPosition(MyScreen.WORLD_WIDTH/2 - (buttonToText.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
+        addActor(buttonToText);
 
         MyButton.setSize((int)(MyScreen.WORLD_WIDTH/3.76),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton = new MyButton("Vissza");
