@@ -47,7 +47,7 @@ public class MyTextField extends TextField {
         style.cursor = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
         style.cursor.setMinWidth(20);
 
-        p.setColor(new Color(0,0,0,0));//0xRRGGBBAA
+        p.setColor(new Color(getColor(121),getColor(192),getColor(57),0.2f));//0xRRGGBBAA
         p.fill();
         style.background = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
