@@ -13,7 +13,7 @@ import java.util.*;
 
 public class Buttons {
 
-    // --------- A getImg(szélesség,magasság,lenyomott_e) vissza ad egy pixmapot amit fel tudtok használni a buttonnak elvileg bár még én sem teljesen  értem azt a részt ---------
+    // ---------- A getImg(szélesség,magasság,lenyomott_e) vissza ad egy pixmapot amit fel tudtok használni a buttonnak elvileg bár még én sem teljesen  értem azt a részt ---------
     // ### manuálisan állítható részek ###
 
     //a gomb lekerekítésének mértéke: 0.1f -> 10%

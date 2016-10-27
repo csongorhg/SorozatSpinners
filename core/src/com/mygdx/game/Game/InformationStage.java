@@ -48,7 +48,7 @@ public class InformationStage extends MyStage{
     }
 
     protected void init() {
-        super.init();//.
+        super.init();//..
 
         switch (PlayStage.difficulty) {
             case 1:currentDifficultyInformation = difficultyEasyInformation; break;
