@@ -34,6 +34,7 @@ public class Sequence extends Operation{
                     newOps.remove(i);
                 }
             }
+            //System.out.println(1);
         }
         for (int i = 0; i < newOps.size() ; i++){
             if(newOps.get(i).getType() == '+'){
@@ -41,6 +42,7 @@ public class Sequence extends Operation{
             }else if(newOps.get(i).getType() == '-'){
                 answer-=newOps.get(i).getNumber();
             }
+            //System.out.println(2);
         }
         return answer;
     }
@@ -51,6 +53,7 @@ public class Sequence extends Operation{
             if(c == '+') v.add(new Plus(operations.get(i).getNumber()));
             else if(c == '-') v.add(new Minus(operations.get(i).getNumber()));
             else if(c == '*') v.add(new Szor(operations.get(i).getNumber()));
+            //System.out.println(3);
         }
     }
 

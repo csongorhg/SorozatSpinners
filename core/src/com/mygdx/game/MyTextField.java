@@ -67,12 +67,12 @@ public class MyTextField extends TextField {
         setWidth(440);
         setHeight(150);
         debug();
-        setOnscreenKeyboard(new OnscreenKeyboard() {
+        /*setOnscreenKeyboard(new OnscreenKeyboard() {
             @Override
             public void show(boolean visible) {
-
+                System.out.println(1);
             }
-        });
+        });*/
 
 
         addListener(new InputListener() {

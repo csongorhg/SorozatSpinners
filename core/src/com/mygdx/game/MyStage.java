@@ -47,7 +47,7 @@ public class MyStage extends Stage {
 
     void musicGenerator(){
         hang = new OneSpriteStaticActor(Assets.assetManager.get(Globals.vanHang?Assets.SOUND_ICON:Assets.MUTE_ICON));
-        float e = MyScreen.WORLD_HEIGHT/6;
+        float e = Globals.hangMagassag; //.
         hang.setPosition(0f,MyScreen.WORLD_HEIGHT-e);
         hang.setSize(e,e);
         addActor(hang);

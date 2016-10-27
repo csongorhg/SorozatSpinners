@@ -26,7 +26,7 @@ public class LoadingScreen extends MyScreen {
             }
         });
         final OneSpriteStaticActor text = new OneSpriteStaticActor("justszoveg.png");
-        //text.setSize(Globals.loadingScreenSize, Globals.loadingScreenSize);
+        text.setSize(MyScreen.WORLD_HEIGHT/2, MyScreen.WORLD_HEIGHT/2);
         text.setX(WORLD_WIDTH/2-text.getWidth()/2);
         text.setY(WORLD_HEIGHT/2-text.getHeight()/2);
         stage.addActor(text);

@@ -34,7 +34,6 @@ public class GameStage extends MyStage{
     //Buttons buttons;
     public static MyTextField myTextArea2;
     public MyLabel stopper;
-    public static MyTextField[] elements1_5 = new MyTextField[5];
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
     public static int db = 0, jatszottMenet = 0, joValasz=0;
@@ -53,7 +52,7 @@ public class GameStage extends MyStage{
         float leftMargin = 15;
 
         //6. elem
-        addActor(myTextArea2 = new MyTextField("A billentyű eléréséhez kattints ide!"){
+        addActor(myTextArea2 = new MyTextField(""){
             @Override
             public void onSubmit() {
                 if (
@@ -114,7 +113,7 @@ public class GameStage extends MyStage{
                     }
                 }
                 else {
-                    myTextArea2.setText("Nem megfelelő tartalmat írtál be!");
+                    myTextArea2.setText("");
                 }
             }
         });
@@ -147,9 +146,10 @@ public class GameStage extends MyStage{
             }
         });
 
+        addActor(new Buttons());
 
         //stopper
-        stopper = new MyLabel("ASD");
+        stopper = new MyLabel("");
         stopper.setWidth(100);
         stopper.setHeight(Globals.size);
         stopper.setPosition(getViewport().getWorldWidth()-stopper.getWidth()-10, getViewport().getWorldHeight()- stopper.getHeight()-10);
@@ -157,7 +157,8 @@ public class GameStage extends MyStage{
 
 
         float currentX = 0;
-        float currentY = labelHeight();
+        float currentY = labelHeight()-stopper.getHeight();
+
         sc.newSequence(PlayStage.difficulty-1);
 
         /*for (int i = 0; i < 6; i++) {
@@ -166,6 +167,7 @@ public class GameStage extends MyStage{
 
         for (int i = 0; i < myLabel.length; i++) {
             addActor(myLabel[i] = new MyLabel(sc.getLineNumber(i)+""));
+            System.out.println(currentY);
             myLabel[i].setY(currentY);
             myLabel[i].setX(currentX);
             currentX += MyScreen.WORLD_WIDTH /5;
@@ -187,7 +189,7 @@ public class GameStage extends MyStage{
         float a;
         a = stopper.getY() - stopper.getHeight();
         a -= myTextArea2.getY();
-        a = MyScreen.WORLD_HEIGHT - (a/2+Globals.size/2);
+        a = MyScreen.WORLD_HEIGHT - (a/2+Globals.size);
         return a;
     }
 
