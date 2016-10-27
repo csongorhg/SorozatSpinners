@@ -27,7 +27,7 @@ public class MyButton extends TextButton {
         textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
     }
-    public MyButton(String text,boolean b) {
+    public MyButton(String text) {
         super(text, textButtonStyle);
         reload();
         setStyle(textButtonStyle);
