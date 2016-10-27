@@ -18,15 +18,15 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 public class ButtonToText extends TextButton{
     static TextButton.TextButtonStyle textButtonStyle;
 
-    static
-    {
+    static{
         textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.font = Assets.assetManager.get(Assets.FONT_HOBO_STD);
+
 
         //átméretezés
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));
         FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        meret.size = 25;
+        meret.size = (int)(MyScreen.WORLD_HEIGHT*0.05);
         meret.characters = Globals.CHARS;
         BitmapFont font = generator.generateFont(meret);
         generator.dispose();
@@ -34,19 +34,37 @@ public class ButtonToText extends TextButton{
         //átméretezés vége
 
         Pixmap p = new Pixmap(1,1, Pixmap.Format.RGB888);
-        p.setColor(1f,0f,0f, 1f);
+        p.setColor(0.3f,0.3f,0.3f, 1f);
         p.fill();
 
         textButtonStyle.fontColor = Color.WHITE;
     }
     public ButtonToText(String text) {
         super(text, textButtonStyle);
+        reload();
         init();
     }
 
+    private void reload(){
+        textButtonStyle = new TextButton.TextButtonStyle();
+        textButtonStyle.font = Assets.assetManager.get(Assets.FONT_HOBO_STD);
+
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        meret.size = (int)(MyScreen.WORLD_HEIGHT*0.05);
+        meret.characters = Globals.CHARS;
+        BitmapFont font = generator.generateFont(meret);
+        generator.dispose();
+        textButtonStyle.font = font;
+
+        Pixmap p = new Pixmap(1,1, Pixmap.Format.RGB888);
+        p.setColor(0.3f,0.3f,0.3f, 1f);
+        p.fill();
+
+        textButtonStyle.fontColor = Color.WHITE;
+    }
 
     protected void init() {
-
     }
 
 }
