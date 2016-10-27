@@ -17,17 +17,17 @@ public class SequenceOperator {
             if(diff == 0){
                 do{
                     createEasy();
-                }while(getLineNumber(6)>=200 && getLineNumber(6)<=-200);
+                }while(getLineNumber(6)>=200 && getLineNumber(6)<=-200 && getLineNumber(5)==getLineNumber(6));
             }
             else if(diff == 1){
                 do{
                     createMedium();
-                }while(getLineNumber(6)>=1000 && getLineNumber(6)<=-1000);
+                }while(getLineNumber(6)>=1000 && getLineNumber(6)<=-1000 && getLineNumber(5)==getLineNumber(6));
             }
             else {
                 do{
                     createHard();
-                }while(getLineNumber(6)>=10000 && getLineNumber(6)<=-10000);
+                }while(getLineNumber(6)>=10000 && getLineNumber(6)<=-10000 && getLineNumber(5)==getLineNumber(6));
             }
         }else{
             System.out.println("Hiba a műveletkészítéskor: Rossz nehézség");
