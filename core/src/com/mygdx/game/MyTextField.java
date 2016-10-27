@@ -39,19 +39,19 @@ public class MyTextField extends TextField {
         generator.dispose();
         style.font = font;
 
-        style.fontColor = Color.valueOf("0088FFFF");//0xRRGGBBAA
+        style.fontColor = new Color(getColor(98),getColor(185),getColor(63),1f);
         Pixmap p = new Pixmap(1,1, Pixmap.Format.RGBA8888);
 
-        p.setColor(Color.valueOf("0088FFFF"));//0xRRGGBBAA
+        p.setColor(new Color(getColor(98),getColor(185),getColor(63),1f));//0xRRGGBBAA
         p.fill();
         style.cursor = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
         style.cursor.setMinWidth(20);
 
-        p.setColor(Color.valueOf("0000AAFF"));//0xRRGGBBAA
+        p.setColor(new Color(0,0,0,0));//0xRRGGBBAA
         p.fill();
         style.background = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
-        p.setColor(Color.valueOf("0088FF7F"));//0xRRGGBBAA
+        p.setColor(new Color(getColor(121),getColor(192),getColor(57),1f));//0xRRGGBBAA
         p.fill();
         style.selection = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
     }
@@ -146,6 +146,13 @@ public class MyTextField extends TextField {
             }
         });
 
+    }
+
+    private static float getColor(int s){
+        float f = s/255f;
+        if(f>1) f = 1f;
+        if(f<0) f = 0f;
+        return f;
     }
 
 

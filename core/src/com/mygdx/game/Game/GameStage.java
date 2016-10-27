@@ -156,7 +156,7 @@ public class GameStage extends MyStage{
         addActor(stopper);
 
 
-        float currentX = 0;
+        float currentX = MyScreen.WORLD_WIDTH/15*2;
         float currentY = labelHeight()-stopper.getHeight();
 
         sc.newSequence(PlayStage.difficulty-1);
