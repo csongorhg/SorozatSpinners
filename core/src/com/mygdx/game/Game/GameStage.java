@@ -48,7 +48,7 @@ public class GameStage extends MyStage{
         float leftMargin = 15;
 
         //6. elem
-        addActor(myTextArea2 = new MyTextField("A billentyű eléréséhez kattints ide!"){
+        addActor(myTextArea2 = new MyTextField(""){
             @Override
             public void onSubmit() {
                 if (
@@ -109,7 +109,7 @@ public class GameStage extends MyStage{
                     }
                 }
                 else {
-                    myTextArea2.setText("Nem megfelelő tartalmat írtál be!");
+                    myTextArea2.setText("");
                 }
             }
         });
@@ -142,6 +142,7 @@ public class GameStage extends MyStage{
             }
         });
 
+        addActor(new Buttons());
 
         //stopper
         stopper = new MyLabel("ASD");
