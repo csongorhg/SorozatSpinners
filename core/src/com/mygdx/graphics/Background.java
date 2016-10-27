@@ -43,7 +43,7 @@ public class Background extends Actor {
             img.setColor(lineC);
             img.drawLine(x,y,(int)(x+MyScreen.WORLD_WIDTH),y);
             img.setColor(Color.GRAY);
-            if(s%2==0)img.fillCircle(x-m,y,m/3);
+            if(s%3==0)img.fillCircle(x-m,y,m/3);
             y+=m;
         }
 

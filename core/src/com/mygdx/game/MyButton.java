@@ -25,6 +25,7 @@ public class MyButton extends TextButton {
 
         p = Buttons.getImg(w,h,true);
         textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
+        textButtonStyle.fontColor = new Color(0.3f,0.3f,0.3f,1f);
 
     }
     public MyButton(String text) {
@@ -43,6 +44,7 @@ public class MyButton extends TextButton {
 
         p = Buttons.getImg(w,h,true);
         textButtonStyle.over = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
+        textButtonStyle.fontColor = new Color(0.3f,0.3f,0.3f,1f);
     }
 
     public static void setSize(int w2,int h2){

@@ -17,6 +17,7 @@ public class MyLabel extends Label {
     {
         style = new LabelStyle();
         style.font =  Assets.assetManager.get(Assets.FONT_HOBO_STD);
+        style.fontColor = new Color(0.3f,0.3f,0.3f,1f);
     }
 
     public MyLabel(String text) {

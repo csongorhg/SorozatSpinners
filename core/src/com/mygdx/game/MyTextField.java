@@ -66,7 +66,7 @@ public class MyTextField extends TextField {
         me = this;
         setWidth(440);
         setHeight(150);
-        debug();
+        //debug();
         /*setOnscreenKeyboard(new OnscreenKeyboard() {
             @Override
             public void show(boolean visible) {
