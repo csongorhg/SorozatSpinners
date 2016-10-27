@@ -18,7 +18,7 @@ public class Globals {
     public static boolean vanHang = true; //ne legyen final!!!!!!!!!!!!!!!
     public static boolean musicchange = true;
     public static final float loadingScreenSize = MyScreen.WORLD_HEIGHT *(2/3);
-    public static final float hangMagassag = MyScreen.WORLD_HEIGHT/6;
+    public static final float hangMagassag = MyScreen.WORLD_HEIGHT/8;
 
 
     /*

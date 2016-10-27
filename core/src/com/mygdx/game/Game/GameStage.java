@@ -8,11 +8,14 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
 import com.mygdx.game.Globals;
+import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.Menu.PlayStage;
+import com.mygdx.game.MyButton;
 import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 import com.mygdx.game.MyTextField;
+import com.mygdx.game.OneSpriteStaticActor;
 import com.mygdx.game.PopupOneSpriteStaticActor;
 import com.mygdx.graphics.Background;
 import com.mygdx.matek.SequenceOperator;
@@ -33,12 +36,15 @@ public class GameStage extends MyStage{
 
     //Buttons buttons;
     public static MyTextField myTextArea2;
-    public MyLabel stopper;
+    public MyLabel stopper, help;
+    public MyButton textButton;
     public static MyLabel[] myLabel = new MyLabel[5];
     public static SequenceOperator sc = new SequenceOperator();
     public static int db = 0, jatszottMenet = 0, joValasz=0;
     public boolean playing = true;
     public Background b;
+    public OneSpriteStaticActor kerdojel;
+    boolean klicked = false;
 
     private int ido = 60;
 
@@ -175,6 +181,37 @@ public class GameStage extends MyStage{
             myLabel[i].setHeight(Globals.size);
         }
 
+
+        /*MyButton.setSize(0,(int)Globals.hangMagassag);
+        textButton = new MyButton("Vissza");
+        textButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                game.setScreen(new InformationScreen(game));
+            }
+        });
+        addActor(textButton);
+        textButton.setSize(0f,(int)Globals.hangMagassag);
+        textButton.setPosition(Globals.hangMagassag+10, MyScreen.WORLD_HEIGHT-textButton.getHeight());*/
+
+        kerdojel = new OneSpriteStaticActor(Assets.assetManager.get(Assets.QUESTION_MARK));
+        kerdojel.setSize(Globals.hangMagassag,Globals.hangMagassag);
+        kerdojel.setPosition(Globals.hangMagassag+10,MyScreen.WORLD_HEIGHT-kerdojel.getHeight());
+        addActor(kerdojel);
+        kerdojel.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                if(!klicked){help.setText(sc.showIt()); klicked = true;}
+            }
+        });
+
+        help = new MyLabel("");
+        help.setSize(3*Globals.hangMagassag, Globals.hangMagassag);
+        help.setPosition(kerdojel.getX()+kerdojel.getWidth(), MyScreen.WORLD_HEIGHT-help.getHeight());
+        System.out.println(kerdojel.getX()+kerdojel.getWidth());
+        addActor(help);
 
     }
 

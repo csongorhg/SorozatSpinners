@@ -53,6 +53,8 @@ public class Assets {
             = new AssetDescriptor<Texture>("sound_icon.png", Texture.class);
     public static final AssetDescriptor<Texture> MUTE_ICON
             = new AssetDescriptor<Texture>("mute_icon.png", Texture.class);
+    public static final AssetDescriptor<Texture> QUESTION_MARK
+            = new AssetDescriptor<Texture>("question_mark.png", Texture.class);
 
     public static void prepare() {
         assetManager = new AssetManager();
@@ -73,6 +75,7 @@ public class Assets {
         assetManager.load(BENSOUND_CUTE);
         assetManager.load(SOUND_ICON);
         assetManager.load(MUTE_ICON);
+        assetManager.load(QUESTION_MARK);
 
         assetManager.load(FONT_C64);
         assetManager.load(FONT_HOBO_STD);
