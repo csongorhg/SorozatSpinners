@@ -74,8 +74,8 @@ public class MyTextField extends TextField {
         me = this;
         setWidth((int)(MyScreen.WORLD_HEIGHT*0.8));
         setHeight((int)(MyScreen.WORLD_HEIGHT*0.03));
-        Gdx.input.setCursorCatched(true);
-        Gdx.input.setCursorPosition(100,100);
+        //Gdx.input.setCursorCatched(true);
+        //Gdx.input.setCursorPosition(100,100);
         Gdx.input.setOnscreenKeyboardVisible(false);
         setOnscreenKeyboard(new OnscreenKeyboard() {
             @Override

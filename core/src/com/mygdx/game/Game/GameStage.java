@@ -211,7 +211,7 @@ public class GameStage extends MyStage{
         help.setSize(MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX())), Globals.hangMagassag);
         help.setPosition(kerdojel.getX()+kerdojel.getWidth(), MyScreen.WORLD_HEIGHT-help.getHeight());
         addActor(help);
-
+        setKeyboardFocus(myTextArea2);
     }
 
     public void helyesValasz(){
