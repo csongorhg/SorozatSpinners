@@ -18,7 +18,12 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 public class ButtonToText extends TextButton{
     static TextButton.TextButtonStyle textButtonStyle;
 
-    static{
+    static {
+        refresh();
+    }
+
+
+    public static void refresh(){
         textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.font = Assets.assetManager.get(Assets.FONT_HOBO_STD);
 

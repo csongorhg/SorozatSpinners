@@ -15,8 +15,12 @@ public class MyButton extends TextButton {
     static int w = 300;
     static int h = 100;
     static TextButton.TextButtonStyle textButtonStyle;
-    static
-    {
+
+    static{
+    refresh();
+    }
+
+    public static void refresh() {
         textButtonStyle = new TextButton.TextButtonStyle();
         textButtonStyle.font =  Assets.assetManager.get(Assets.FONT_HOBO_STD);
 

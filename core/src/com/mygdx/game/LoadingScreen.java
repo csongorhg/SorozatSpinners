@@ -34,9 +34,9 @@ public class LoadingScreen extends MyScreen {
 
     @Override
     public void show() {
-        super.show();
         Assets.load();
         Assets.assetManager.finishLoading();
+        super.show();
     }
 
     @Override

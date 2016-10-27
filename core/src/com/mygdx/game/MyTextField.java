@@ -28,6 +28,10 @@ public class MyTextField extends TextField {
     private Buttons buttons;
 
     static {
+        refresh();
+    }
+
+    public static void refresh() {
         style = new TextArea.TextFieldStyle();
 
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/c64a.ttf"));
