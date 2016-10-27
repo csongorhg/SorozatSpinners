@@ -52,8 +52,8 @@ public class InformationStage extends MyStage{
             case 3:currentDifficultyInformation = difficultyHardInformation; break;
         }
 
-        MyButton.setSize(600,60);
-        textButton2 = new MyButton("Teszt indítása!",true);
+        MyButton.setSize((int)(MyScreen.WORLD_WIDTH/1.07),(int)(MyScreen.WORLD_HEIGHT/8));
+        textButton2 = new MyButton("Teszt indítása!");
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -61,7 +61,7 @@ public class InformationStage extends MyStage{
                 game.setScreen(new GameScreen(game));
             }
         });
-        textButton2.setSize(600f,60f);
+        textButton2.setSize((int)(MyScreen.WORLD_WIDTH/1.07),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton2.getWidth()/2),MyScreen.WORLD_HEIGHT * (3/4f));
         addActor(textButton2);
 
@@ -72,8 +72,8 @@ public class InformationStage extends MyStage{
         szovegButton.setPosition(MyScreen.WORLD_WIDTH/2 - (szovegButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
         addActor(szovegButton);
 
-        MyButton.setSize(170,60);
-        textButton = new MyButton("Vissza",true);
+        MyButton.setSize((int)(MyScreen.WORLD_WIDTH/3.76),(int)(MyScreen.WORLD_HEIGHT/8));
+        textButton = new MyButton("Vissza");
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -82,7 +82,7 @@ public class InformationStage extends MyStage{
 
             }
         });
-        textButton.setSize(170f,60f);
+        textButton.setSize((int)(MyScreen.WORLD_WIDTH/3.76),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton.setPosition(0f,MyScreen.WORLD_HEIGHT * (0/4f));
         addActor(textButton);
     }
