@@ -30,7 +30,7 @@ public class Background extends Actor {
 
     private Pixmap getPixmap() {
         Pixmap img = new Pixmap((int)MyScreen.WORLD_WIDTH,(int)MyScreen.WORLD_HEIGHT, Pixmap.Format.RGBA8888);
-        img.setColor(Color.WHITE);
+        img.setColor(new Color(0.9f,0.9f,0.9f,1));
         img.fill();
 
         int m = (int)(MyScreen.WORLD_HEIGHT/15);
@@ -43,7 +43,7 @@ public class Background extends Actor {
             img.setColor(lineC);
             img.drawLine(x,y,(int)(x+MyScreen.WORLD_WIDTH),y);
             img.setColor(Color.GRAY);
-            if(s%2==0)img.drawCircle(x-m,y,m/3);
+            if(s%2==0)img.fillCircle(x-m,y,m/3);
             y+=m;
         }
 
