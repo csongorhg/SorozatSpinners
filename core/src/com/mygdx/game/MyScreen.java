@@ -25,6 +25,7 @@ abstract public class MyScreen implements Screen {
         this.game = game;
         camera.translate(WORLD_WIDTH/2, WORLD_HEIGHT/2);
         camera.update();
+        Gdx.input.setOnscreenKeyboardVisible(false);
     }
 
     @Override
