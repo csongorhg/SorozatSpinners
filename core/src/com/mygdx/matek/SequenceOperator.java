@@ -16,19 +16,16 @@ public class SequenceOperator {
         if(diff>-1 && diff<3){
             if(diff == 0){
                 do{
-                    System.out.println("Könnyű nehézség generálva!");
                     createEasy();
                 }while(getLineNumber(6)>=200 && getLineNumber(6)<=-200);
             }
             else if(diff == 1){
                 do{
-                    System.out.println("Közepes nehézség generálva!");
                     createMedium();
                 }while(getLineNumber(6)>=1000 && getLineNumber(6)<=-1000);
             }
             else {
                 do{
-                    System.out.println("Nehéz nehézség generálva!");
                     createHard();
                 }while(getLineNumber(6)>=10000 && getLineNumber(6)<=-10000);
             }
