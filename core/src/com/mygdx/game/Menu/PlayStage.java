@@ -34,8 +34,8 @@ public class PlayStage extends MyStage {
 
     protected void init() {
         super.init();
-        MyButton.setSize(250,60);
-        textButton2 = new MyButton("Könnyű",true);
+        MyButton.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
+        textButton2 = new MyButton("Könnyű");
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -45,12 +45,12 @@ public class PlayStage extends MyStage {
 
             }
         });
-        textButton2.setSize(250f,60f);
+        textButton2.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton2.getWidth()/2),MyScreen.WORLD_HEIGHT * (3/4f));
         addActor(textButton2);
 
 
-        textButton3 = new MyButton("Közepes",true);
+        textButton3 = new MyButton("Közepes");
         textButton3.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -59,12 +59,12 @@ public class PlayStage extends MyStage {
                 game.setScreen(new InformationScreen(game));
             }
         });
-        textButton3.setSize(250f,60f);
+        textButton3.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton3.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton3.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/4f));
         addActor(textButton3);
 
 
-        textButton4 = new MyButton("Nehéz",true);
+        textButton4 = new MyButton("Nehéz");
         textButton4.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -73,12 +73,12 @@ public class PlayStage extends MyStage {
                 game.setScreen(new InformationScreen(game));
             }
         });
-        textButton4.setSize(250f,60f);
+        textButton4.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton4.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton4.getWidth()/2),MyScreen.WORLD_HEIGHT * (1/4f));
         addActor(textButton4);
 
-        MyButton.setSize(170,60);
-        textButton = new MyButton("Vissza",true);
+        MyButton.setSize((int)(MyScreen.WORLD_WIDTH/3.76),(int)(MyScreen.WORLD_HEIGHT/8));
+        textButton = new MyButton("Vissza");
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -86,7 +86,7 @@ public class PlayStage extends MyStage {
                 game.setScreen(new MenuScreen(game));
             }
         });
-        textButton.setSize(170f,60f);
+        textButton.setSize((int)(MyScreen.WORLD_WIDTH/3.76),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton.setPosition(0f,MyScreen.WORLD_HEIGHT * (0/4f));
         addActor(textButton);
     }

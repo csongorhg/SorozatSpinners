@@ -38,8 +38,8 @@ public class MenuStage extends MyStage {
     public void init()
     {
         super.init();
-        MyButton.setSize(250,60);
-        textButton = new MyButton("Játék",true);
+        MyButton.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
+        textButton = new MyButton("Játék");
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -48,7 +48,7 @@ public class MenuStage extends MyStage {
             }
         });
 
-        textButton2 = new MyButton("Készítők",true);
+        textButton2 = new MyButton("Készítők");
         textButton2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -57,7 +57,7 @@ public class MenuStage extends MyStage {
             }
         });
 
-        textButton3 = new MyButton("Kilépés",true);
+        textButton3 = new MyButton("Kilépés");
         textButton3.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -67,13 +67,13 @@ public class MenuStage extends MyStage {
         });
 
 
-        textButton.setSize(250f,60f);
+        textButton.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/3f));
         addActor(textButton);
-        textButton2.setSize(250f,60f);
+        textButton2.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (1/3f));
         addActor(textButton2);
-        textButton3.setSize(250f,60f);
+        textButton3.setSize((int)(MyScreen.WORLD_WIDTH/2.56),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton3.setPosition(0f,0f);
         addActor(textButton3);
 

@@ -39,8 +39,8 @@ public class EndStage extends MyStage {
         labelEnd.setY(MyScreen.WORLD_HEIGHT/2-labelEnd.getHeight()/2);
         labelEnd.setX(MyScreen.WORLD_WIDTH/2-labelEnd.getWidth()/2);
 
-        MyButton.setSize((int)MyScreen.WORLD_WIDTH,50);
-        bBack = new MyButton("Vissza a menübe",true);
+        MyButton.setSize((int)MyScreen.WORLD_WIDTH,(int)(MyScreen.WORLD_HEIGHT/9.6));
+        bBack = new MyButton("Vissza a menübe");
         bBack.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -50,7 +50,7 @@ public class EndStage extends MyStage {
                 game.setScreen(new MenuScreen(game));
             }
         });
-        bBack.setSize(MyScreen.WORLD_WIDTH, 50);
+        bBack.setSize(MyScreen.WORLD_WIDTH, (int)(MyScreen.WORLD_HEIGHT/9.6));
         bBack.setPosition(MyScreen.WORLD_WIDTH/2-bBack.getWidth()/2, 0f);
         addActor(bBack);
 
