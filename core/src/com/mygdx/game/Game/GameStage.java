@@ -14,6 +14,7 @@ import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 import com.mygdx.game.MyTextField;
 import com.mygdx.game.PopupOneSpriteStaticActor;
+import com.mygdx.graphics.Background;
 import com.mygdx.matek.SequenceOperator;
 
 /**
@@ -38,10 +39,14 @@ public class GameStage extends MyStage{
     public static SequenceOperator sc = new SequenceOperator();
     public static int db = 0, jatszottMenet = 0, joValasz=0;
     public boolean playing = true;
+    public Background b;
 
     private int ido = 60;
 
     protected void init() {
+        b = new Background();
+        addActor(b);
+        b.setPosition(0,0);
         Globals.musicchange = false;
         super.init();
         myLabel = new MyLabel[5];
