@@ -37,7 +37,7 @@ public class ButtonToText extends TextButton{
         p.setColor(0.3f,0.3f,0.3f, 1f);
         p.fill();
 
-        textButtonStyle.fontColor = Color.WHITE;
+        textButtonStyle.fontColor = new Color(0.3f,0.3f,0.3f, 1f);
     }
     public ButtonToText(String text) {
         super(text, textButtonStyle);
@@ -61,7 +61,7 @@ public class ButtonToText extends TextButton{
         p.setColor(0.3f,0.3f,0.3f, 1f);
         p.fill();
 
-        textButtonStyle.fontColor = Color.WHITE;
+        textButtonStyle.fontColor = new Color(0.3f,0.3f,0.3f, 1f);
     }
 
     protected void init() {

@@ -72,6 +72,7 @@ public class InformationStage extends MyStage{
         addActor(textButton2);
 
         buttonToText = new ButtonToText(currentDifficultyInformation+
+                "\nA sorozat első 5 elemét fogja látni, a cél: a 6. elem kitalálása!\r"+
                 "\nA feladatok megoldására 1 perc áll rendelkezésre!\r" +
                 "\n10 feladatra kell választ adni!\r\nSok sikert!");
         buttonToText.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT/2);
