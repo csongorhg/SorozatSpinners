@@ -6,11 +6,14 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.Assets;
 import com.mygdx.game.ButtonToText;
+import com.mygdx.game.Globals;
 import com.mygdx.game.Menu.MenuStage;
 import com.mygdx.game.Menu.PlayScreen;
 import com.mygdx.game.Menu.PlayStage;
 import com.mygdx.game.MyButton;
+import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 
@@ -20,7 +23,8 @@ import com.mygdx.game.MyStage;
 
 public class InformationStage extends MyStage{
 
-    private TextButton textButton,textButton2, szovegButton;
+    private TextButton textButton,textButton2;
+    private MyLabel szovegLabel;
 
     private static String difficultyEasyInformation = "Könnyű szint!\r\nEgyes feladványok 1 vagy 2 műveletet tartalmaznak!\r" +
             "\nA feladatok nem tartalmaznak zárójelet!\r",
@@ -62,15 +66,15 @@ public class InformationStage extends MyStage{
             }
         });
         textButton2.setSize((int)(MyScreen.WORLD_WIDTH/1.07),(int)(MyScreen.WORLD_HEIGHT/8));
-        textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton2.getWidth()/2),MyScreen.WORLD_HEIGHT * (3/4f));
+        textButton2.setPosition(MyScreen.WORLD_WIDTH/2 - (textButton2.getWidth()/2), MyScreen.WORLD_HEIGHT - (2*Globals.hangMagassag));
         addActor(textButton2);
 
-        szovegButton = new ButtonToText(currentDifficultyInformation+
+        szovegLabel = new MyLabel(currentDifficultyInformation+
                 "\nA feladatok megoldására 1 perc áll rendelkezésre!\r" +
                 "\n10 feladatra kell választ adni!\r\nSok sikert!");
-        szovegButton.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT/2);
-        szovegButton.setPosition(MyScreen.WORLD_WIDTH/2 - (szovegButton.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
-        addActor(szovegButton);
+        szovegLabel.setSize(MyScreen.WORLD_WIDTH,MyScreen.WORLD_HEIGHT/2);
+        szovegLabel.setPosition(MyScreen.WORLD_WIDTH/2 - (szovegLabel.getWidth()/2),MyScreen.WORLD_HEIGHT * (2/10f));
+        addActor(szovegLabel);
 
         MyButton.setSize((int)(MyScreen.WORLD_WIDTH/3.76),(int)(MyScreen.WORLD_HEIGHT/8));
         textButton = new MyButton("Vissza");
@@ -79,7 +83,6 @@ public class InformationStage extends MyStage{
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
                 game.setScreen(new PlayScreen(game));
-
             }
         });
         textButton.setSize((int)(MyScreen.WORLD_WIDTH/3.76),(int)(MyScreen.WORLD_HEIGHT/8));
