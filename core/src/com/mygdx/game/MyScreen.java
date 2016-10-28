@@ -72,11 +72,6 @@ abstract public class MyScreen implements Screen {
         MyButton.refresh();
         ButtonToText.refresh();
 
-        Gdx.app.error("asd",Globals.menumusic + "");
-        Gdx.app.error("asd",Globals.gamemusic + "");
-        Gdx.app.error("asd",Globals.menumusic.isPlaying() + " Menumusic");
-        Gdx.app.error("asd",Globals.gamemusic.isPlaying() + " Gamemusic");
-
         Globals.music();
     }
 

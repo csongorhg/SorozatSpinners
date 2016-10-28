@@ -10,8 +10,6 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
  */
 public class Globals {
     public static final String CHARS = "0123456789öüóqwertzuiopőúasdfghjkléáűíyxcvbnm'+!%/=()ÖÜÓQWERTZUIOPŐÚASDFGHJKLÉÁŰÍYXCVBNM?:_*<>#&@{}[],-.";
-    /*public static final BitmapFont FONT_HOBO_STD;
-    public static final BitmapFont FONT_C64;*/
     public static Music menumusic = Assets.assetManager.get(Assets.BENDSOUND_ACOUSTICBREEZE);
     public static Music gamemusic = Assets.assetManager.get(Assets.BENSOUND_CUTE);
     public static final int size = 50;
