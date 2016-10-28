@@ -46,9 +46,9 @@ public class CreditsStage extends MyStage {
 
     protected void init() {
         super.init();
-        myLabel = new MyLabel("Készítették:\nHegedüs Csongor\nEgyed Vince\nHorváth Patrik\nKiss Norbert");
+        myLabel = new MyLabel("Készítették:\nEgyed Vince\nHegedüs Csongor\nHorváth Patrik\nKiss Norbert\nFelkészítő tanár: Tüske Balázs");
         myLabel.setSize(100f,100f);
-        myLabel.setY((MyScreen.WORLD_HEIGHT/2f)-50f);
+        myLabel.setY((MyScreen.WORLD_HEIGHT/1.7f)-50f);
         myLabel.setX((MyScreen.WORLD_WIDTH/2f)-50f);
         addActor(myLabel);
 
