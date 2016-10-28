@@ -137,10 +137,10 @@ public class GameStage extends MyStage{
             }
         }
                */
-        myTextArea2.setWidth(MyScreen.WORLD_WIDTH-leftMargin*2);
+        myTextArea2.setWidth((MyScreen.WORLD_WIDTH-(MyScreen.WORLD_WIDTH/15)*2)-leftMargin*2);
         myTextArea2.setHeight(Globals.size);
         myTextArea2.setY(MyScreen.WORLD_HEIGHT/2 );
-        myTextArea2.setX(leftMargin);
+        myTextArea2.setX((MyScreen.WORLD_WIDTH/15)*2+10f);
         myTextArea2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
