@@ -52,8 +52,8 @@ public class EndStage extends MyStage {
                 game.setScreen(new MenuScreen(game));
             }
         });
-        bBack.setSize(MyScreen.WORLD_WIDTH/2, MyScreen.WORLD_HEIGHT/8);
-        bBack.setPosition(MyScreen.WORLD_WIDTH/4, MyScreen.WORLD_WIDTH/16);
+        bBack.setSize(MyScreen.WORLD_WIDTH/2+MyScreen.WORLD_WIDTH/4, MyScreen.WORLD_HEIGHT/8);
+        bBack.setPosition(MyScreen.WORLD_WIDTH/8, MyScreen.WORLD_WIDTH/16);
         addActor(bBack);
 
     }
