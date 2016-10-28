@@ -34,19 +34,34 @@ public class Buttons extends Group {
 
     private boolean appendText(String s)
     {
-            if (textField == null) return false;
+        if (textField == null) return false;
             int cp = textField.getCursorPosition();
-            if (s.equals("negativ")) {
-                textField.setText("-" + textField.getText().substring(0, cp) + textField.getText().substring(cp, textField.getText().length()));
-            } else if (s.equals("pozitiv")) {
-                textField.setText(textField.getText().substring(1, cp) + textField.getText().substring(cp, textField.getText().length()));
-            } else if (s.equals("torol")) {
-                textField.setText(textField.getText().substring(0, cp - 1) + textField.getText().substring(cp, textField.getText().length()));
-            } else {
-                textField.setText(textField.getText().substring(0, cp) + s + textField.getText().substring(cp, textField.getText().length()));
+                if (s.equals("negativ")) {
+                    textField.setText("-" + textField.getText().substring(0, cp) + textField.getText().substring(cp, textField.getText().length()));
+                } else if (s.equals("pozitiv")) {
+                    textField.setText(textField.getText().substring(1, cp) + textField.getText().substring(cp, textField.getText().length()));
+                } else if (s.equals("torol")) {
+                    textField.setText(textField.getText().substring(0, cp - 1) + textField.getText().substring(cp, textField.getText().length()));
+                } else {
+                    textField.setText(textField.getText().substring(0, cp) + s + textField.getText().substring(cp, textField.getText().length()));
+                }
+                textField.setCursorPosition(cp + 1);
+                return true;
+    }
+
+    boolean jo(){
+        boolean b = false;
+        try{
+            if (textField.getText().length()>=6)
+            {
+                throw new Exception();
             }
-            textField.setCursorPosition(cp + 1);
-            return true;
+            int i = Integer.parseInt(textField.getText());
+            if(i<Integer.MAX_VALUE && i>Integer.MIN_VALUE) b = true;
+        }catch(Exception e){}
+        if(textField.getText().equals("")) b = true;
+        else if(textField.getText().charAt(0) == '-') b = true;
+        return b;
     }
 
     public Buttons() {
@@ -56,7 +71,15 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("0");
+                if(!(textField.getText().equals("")) && jo()){
+                    if(textField.getText().charAt(0) != '-'){
+                        appendText("0");
+                    }else{
+                        if(textField.getText().length()>1){
+                            appendText("0");
+                        }
+                    }
+                }
             }
         });
         b0.setSize(h,h);
@@ -67,7 +90,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("1");
+                if(jo())appendText("1");
             }
         });
         b1.setSize(h,h);
@@ -78,7 +101,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("2");
+                if(jo())appendText("2");
             }
         });
         b2.setSize(h,h);
@@ -89,7 +112,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("3");
+                if(jo())appendText("3");
             }
         });
         b3.setSize(h,h);
@@ -100,7 +123,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("4");
+                if(jo())appendText("4");
             }
         });
         b4.setSize(h,h);
@@ -111,7 +134,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("5");
+                if(jo())appendText("5");
             }
         });
         b5.setSize(h,h);
@@ -122,7 +145,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("6");
+                if(jo())appendText("6");
             }
         });
         b6.setSize(h,h);
@@ -133,7 +156,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("7");
+                if(jo())appendText("7");
             }
         });
         b7.setSize(h,h);
@@ -144,7 +167,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("8");
+                if(jo())appendText("8");
             }
         });
         b8.setSize(h,h);
@@ -155,7 +178,7 @@ public class Buttons extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                appendText("9");
+                if(jo())appendText("9");
             }
         });
         b9.setSize(h,h);
@@ -235,6 +258,7 @@ public class Buttons extends Group {
         addActor(bMinus);
         addActor(bTorol);
         addActor(bEnter);
+
     }
 
 }
