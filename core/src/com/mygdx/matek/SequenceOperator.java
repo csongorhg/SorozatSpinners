@@ -36,13 +36,12 @@ public class SequenceOperator {
     }
 
     private Operation randomOp(){
-        int r = random(0,10);
+        int r = random(0,2);
         Operation o;
-        if(r>0 && r<4){
+        if(r==0){
             o = new Plus(random(1,9));
-        }else if(r>=4 && r<6 && !sequence.getSzor()){
+        }else if(r==1){
             o = new Szor(random(1,9));
-            sequence.setSzor(true);
         }else{
             o = new Minus(random(1,9));
         }
@@ -66,6 +65,7 @@ public class SequenceOperator {
     }
 
     private void createEasy() {
+        sequence = new Sequence();
         piece = 1;
         for (int i = 0; i < piece ; i++){
             sequence.addOperation(randomOp());
@@ -73,6 +73,7 @@ public class SequenceOperator {
     }
 
     private void createMedium() {
+        sequence = new Sequence();
         piece = random(1,2);
         for (int i = 0; i < piece ; i++){
             sequence.addOperation(randomOp());
@@ -80,6 +81,7 @@ public class SequenceOperator {
     }
 
     private void createHard() {
+        sequence = new Sequence();
         piece = random(2,3);
         for (int i = 0; i < piece ; i++){
             sequence.addOperation(randomOp());
