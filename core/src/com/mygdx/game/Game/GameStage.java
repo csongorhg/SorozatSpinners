@@ -3,7 +3,10 @@ package com.mygdx.game.Game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
@@ -205,9 +208,9 @@ public class GameStage extends MyStage{
                 if(!klicked){help.setText(sc.showIt()); klicked = true;}
             }
         });
-
+        float helpWidth = MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX()));
         help = new MyLabel("");
-        help.setSize(MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX())), Globals.hangMagassag);
+        help.setSize(helpWidth, Globals.hangMagassag);
         help.setPosition(kerdojel.getX()+kerdojel.getWidth(), MyScreen.WORLD_HEIGHT-help.getHeight());
         addActor(help);
         setKeyboardFocus(myTextArea2);
