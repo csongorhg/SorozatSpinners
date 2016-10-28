@@ -13,6 +13,8 @@ import com.mygdx.game.MyLabel;
 import com.mygdx.game.MyScreen;
 import com.mygdx.game.MyStage;
 
+import jdk.nashorn.internal.objects.Global;
+
 /**
  * Created by Kicsi on 2016. 10. 14..
  */
@@ -39,7 +41,7 @@ public class EndStage extends MyStage {
         labelEnd.setY(MyScreen.WORLD_HEIGHT/2-labelEnd.getHeight()/2);
         labelEnd.setX(MyScreen.WORLD_WIDTH/2-labelEnd.getWidth()/2);
 
-        MyButton.setSize((int)MyScreen.WORLD_WIDTH,50);
+        MyButton.setSize((int)MyScreen.WORLD_WIDTH/2, (int)MyScreen.WORLD_HEIGHT/8);
         bBack = new MyButton("Vissza a menübe");
         bBack.addListener(new ClickListener(){
             @Override
@@ -50,8 +52,8 @@ public class EndStage extends MyStage {
                 game.setScreen(new MenuScreen(game));
             }
         });
-        bBack.setSize(MyScreen.WORLD_WIDTH, 50);
-        bBack.setPosition(MyScreen.WORLD_WIDTH/2-bBack.getWidth()/2, 0f);
+        bBack.setSize(MyScreen.WORLD_WIDTH/2, MyScreen.WORLD_HEIGHT/8);
+        bBack.setPosition(MyScreen.WORLD_WIDTH/4, MyScreen.WORLD_WIDTH/16);
         addActor(bBack);
 
     }

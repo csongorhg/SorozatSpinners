@@ -182,22 +182,21 @@ public class GameStage extends MyStage{
         }
 
 
-        /*MyButton.setSize(0,(int)Globals.hangMagassag);
-        textButton = new MyButton("Vissza");
+        textButton = new MyButton("Vége");
         textButton.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                game.setScreen(new InformationScreen(game));
+                game.setScreen(new EndScreen(game));
             }
         });
+        textButton.setSize(MyScreen.WORLD_HEIGHT/3,Globals.hangMagassag);
+        textButton.setPosition(Globals.hangMagassag+10, MyScreen.WORLD_HEIGHT-textButton.getHeight());
         addActor(textButton);
-        textButton.setSize(0f,(int)Globals.hangMagassag);
-        textButton.setPosition(Globals.hangMagassag+10, MyScreen.WORLD_HEIGHT-textButton.getHeight());*/
 
         kerdojel = new OneSpriteStaticActor(Assets.assetManager.get(Assets.QUESTION_MARK));
         kerdojel.setSize(Globals.hangMagassag,Globals.hangMagassag);
-        kerdojel.setPosition(Globals.hangMagassag+10,MyScreen.WORLD_HEIGHT-kerdojel.getHeight());
+        kerdojel.setPosition(textButton.getX() + textButton.getWidth()+10,MyScreen.WORLD_HEIGHT-kerdojel.getHeight());
         addActor(kerdojel);
         kerdojel.addListener(new ClickListener(){
             @Override
