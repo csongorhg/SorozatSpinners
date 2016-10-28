@@ -33,9 +33,9 @@ public class MyTextField extends TextField {
     public static void refresh() {
         style = new TextArea.TextFieldStyle();
 
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/c64a.ttf"));
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));
         FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        meret.size = Globals.size/2;
+        meret.size = (int)(Globals.size*0.75);
         meret.characters = Globals.CHARS;
         style.font =  Assets.assetManager.get(Assets.FONT_HOBO_STD);
         BitmapFont font = generator.generateFont(meret);
@@ -72,7 +72,7 @@ public class MyTextField extends TextField {
     public MyTextField(String s){
         super(s,style);
         me = this;
-        setWidth((int)(MyScreen.WORLD_HEIGHT*0.8));
+        setWidth((int)(MyScreen.WORLD_HEIGHT*0.6));
         setHeight((int)(MyScreen.WORLD_HEIGHT*0.03));
         //Gdx.input.setCursorCatched(true);
         //Gdx.input.setCursorPosition(100,100);
