@@ -21,7 +21,6 @@ public class MyGdxGame extends Game {
 	public void create () {
         Assets.prepare();
 		setScreen(new LoadingScreen(this));
-		System.out.println(Integer.MAX_VALUE);
 	}
 
     @Override

@@ -40,7 +40,6 @@ public class GameStage extends MyStage{
         super(viewport, game);
     }
 
-    //Buttons buttons;
     public static MyTextField myTextArea2;
     public MyLabel stopper, help;
     public MyButton textButton;
@@ -63,19 +62,17 @@ public class GameStage extends MyStage{
         myLabel = new MyLabel[5];
         float leftMargin = 15;
 
-        //6. elem
         addActor(myTextArea2 = new MyTextField(""){
             @Override
             public void onSubmit() {
                 if (
-                (!getText().equals("\n") && !getText().equals("")) //üres String, enter vizsgálata
-                && (getText().substring(getText().length() == 1 ? 0 : 1 //ha csak 1 hosszú, és az előjel vagy sem
-                    ,getText().length()).matches("[0-9]+")) //számokból áll-e
-                && ((getText().charAt(0) == '-' && getText().length()>1) || (getText().charAt(0)+"").matches("[0-9]+")) //előjel, ha van akkor követi-e érték
+                (!getText().equals("\n") && !getText().equals(""))
+                && (getText().substring(getText().length() == 1 ? 0 : 1
+                    ,getText().length()).matches("[0-9]+"))
+                && ((getText().charAt(0) == '-' && getText().length()>1) || (getText().charAt(0)+"").matches("[0-9]+"))
                 )
                 {
                     if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
-                        //System.out.println("Helyes megfejtés!");
                         addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.greenCheck))
                         {
                             @Override
@@ -85,7 +82,6 @@ public class GameStage extends MyStage{
                                 joValasz++;
                                 jatszottMenet++;
                                 playing=false;
-                                //Idozito.ido.stop();
                             }
 
                             @Override
@@ -99,17 +95,14 @@ public class GameStage extends MyStage{
                         });
                     }
                     else {
-                        //System.out.println("Helytelen megfejtés!");
                         addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
                         {
                             @Override
                             protected void init() {
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
-                                //Idozito.ido.stop();
                                 jatszottMenet++;
                                 playing = false;
-                                //System.out.println(getZIndex());
                             }
 
                             @Override
@@ -129,14 +122,8 @@ public class GameStage extends MyStage{
                 }
             }
         });
-        /*
-        for (Actor a : getActors()) {
-            if (a instanceof PopupOneSpriteStaticActor)
-            {
-                getActors().removeValue(a,true);
-            }
-        }
-               */
+
+        //6.elem
         myTextArea2.setWidth((MyScreen.WORLD_WIDTH-(MyScreen.WORLD_WIDTH/15)*2)-leftMargin*2);
         myTextArea2.setHeight(Globals.size);
         myTextArea2.setY(MyScreen.WORLD_HEIGHT/2 );
@@ -152,9 +139,6 @@ public class GameStage extends MyStage{
                 {
                     myTextArea2.setText("");
                 }
-/*                if (myTextArea2.getText().compareTo("Nem megfelelő tartalmat írtál be!") == 0  || myTextArea2.getText().compareTo("A billentyű eléréséhez kattints ide!")==0) {
-
-                }*/
             }
         });
 
@@ -173,13 +157,8 @@ public class GameStage extends MyStage{
 
         sc.newSequence(PlayStage.difficulty-1);
 
-        /*for (int i = 0; i < 6; i++) {
-            System.out.println(sc.getLineNumber(i));
-        }*/
-
         for (int i = 0; i < myLabel.length; i++) {
             addActor(myLabel[i] = new MyLabel(sc.getLineNumber(i)+""));
-            //System.out.println(currentY);
             myLabel[i].setY(currentY);
             myLabel[i].setX(currentX);
             currentX += MyScreen.WORLD_WIDTH /5;
@@ -224,7 +203,6 @@ public class GameStage extends MyStage{
         MyLabel l = new MyLabel("A helyes válasz: "+sc.getLineNumber(5));
         l.setPosition(MyScreen.WORLD_WIDTH/2 - l.getWidth()/2, MyScreen.WORLD_HEIGHT/2 - l.getHeight()/2);
         addActor(l);
-        //l.setZIndex(200);
     }
 
     private float labelHeight(){

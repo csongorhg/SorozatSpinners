@@ -13,25 +13,16 @@ import java.util.*;
 
 public class Buttons {
 
-    // ---------- A getImg(szélesség,magasság,lenyomott_e) vissza ad egy pixmapot amit fel tudtok használni a buttonnak elvileg bár még én sem teljesen  értem azt a részt ---------
-    // ### manuálisan állítható részek ###
-
-    //a gomb lekerekítésének mértéke: 0.1f -> 10%
     private static float buttonEdge = 0.1f;
-    //differencia a szín sötét és világos árnyalatának eltolása az árnyékolásnál
     private static int diff = 25;
 
-    //a normal nem lenyomott gomb árnyalatai
     private static int r = 98;
     private static int g = 185;
     private static int b = 63;
 
-    //a lenyomott gomb árnyalatai
     private static int rA = 121;
     private static int gA = 192;
     private static int bA = 57;
-
-    // ### eddig ###
 
     private static Color bcNormal = new Color(getColor(r),getColor(g),getColor(b),1f);
     private static Color bcShadow = new Color(getColor(r-diff),getColor(g-diff),getColor(b-diff),1f);
@@ -61,8 +52,6 @@ public class Buttons {
         img.setColor(bcNormal);
         img.fillRectangle(s,0,width-2*s,height);
         img.fillRectangle(0,s,width,height-2*s);
-
-        //árnyékolás
 
         img.setColor(bcLight);
         img.fillRectangle(s,0,width-2*s,s);

@@ -36,14 +36,12 @@ public class LoadingScreen extends MyScreen {
     public void show() {
         Assets.load();
         Assets.assetManager.finishLoading();
-        //super.show();
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
         if (elapsedTime > 3.0 && Assets.assetManager.update()) {
-            //Assets.afterLoaded();
             game.setScreen(new MenuScreen(game));
         }
         elapsedTime += delta;

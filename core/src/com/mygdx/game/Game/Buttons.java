@@ -217,7 +217,6 @@ public class Buttons extends Group {
                 }
                 else if ((GameStage.myTextArea2.getText()).length() > 0) { //nem tud minusz indexen törölni
                     appendText("torol");
-                    //törlés hatására visszadobja a string-1 stringet (123 -> 12)
                 }
 
             }
@@ -232,14 +231,6 @@ public class Buttons extends Group {
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
                 onEnterPressed();
-                //compareTo-t, toInteger-t nem ismeri, ezért equals összehasonlítás
-/*                if ((GameStage.sc.getLineNumber(5)+"").
-                        equals(GameStage.myTextArea2.getText())) {
-                    System.out.println("Helyes megfejtés!");
-                }
-                else {
-                    System.out.println("Helytelen megfejtés!");
-                }*/
             }
         });
         bEnter.setSize(3*h,h);
