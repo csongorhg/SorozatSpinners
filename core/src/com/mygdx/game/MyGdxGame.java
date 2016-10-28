@@ -5,8 +5,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-//gondolom titeket is zavar a for tab  hiánya tessék egy kis "lábjegyzet" : for (int i = 0; i < 10 ; i++){}
-
+/*
+További tartalmak:
+-animáció a betöltő képernyőn
+-zene a menükben, illetve a játék alatt (zene megállító, indító gomb)
+-készítők menüpont
+-nehézségi fokozatok (könnyű, közepes, nehéz)
+-saját beviteli mező a számoknak, kilépés a futó játékból a menübe
+-időzítő (minden feladatra 60másodperc)
+*/
 
 public class MyGdxGame extends Game {
 	SpriteBatch batch;
@@ -15,7 +22,6 @@ public class MyGdxGame extends Game {
 	public void create () {
         Assets.prepare();
 		setScreen(new LoadingScreen(this));
-		System.out.println(Integer.MAX_VALUE);
 	}
 
     @Override

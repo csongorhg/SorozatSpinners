@@ -51,7 +51,7 @@ public class MyTextField extends TextField {
         style.cursor = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
         style.cursor.setMinWidth(20);
 
-        p.setColor(new Color(getColor(121),getColor(192),getColor(57),0.2f));
+        p.setColor(new Color(getColor(121),getColor(192),getColor(57),0.4f));
         p.fill();
         style.background = new TextureRegionDrawable(new TextureRegion(new Texture(p)));
 
@@ -70,13 +70,12 @@ public class MyTextField extends TextField {
         super.setCursorPosition(cursorPosition);
     }
 
+
     public MyTextField(String s){
         super(s,style);
         me = this;
         setWidth((int)(MyScreen.WORLD_HEIGHT*0.6));
         setHeight((int)(MyScreen.WORLD_HEIGHT*0.03));
-        //Gdx.input.setCursorCatched(true);
-        //Gdx.input.setCursorPosition(100,100);
         Gdx.input.setOnscreenKeyboardVisible(false);
         setOnscreenKeyboard(new OnscreenKeyboard() {
             @Override
@@ -137,6 +136,7 @@ public class MyTextField extends TextField {
                             public void onEnterPressed() {
                                 super.onEnterPressed();
                                 onSubmit();
+
                             }
                         });
                         buttons.setTarget(me);
@@ -163,5 +163,24 @@ public class MyTextField extends TextField {
     }
 
 
+    private float blinktime = 0;
 
+    public void blinking()
+    {
+        blinktime = 1;
+    }
+
+    @Override
+    public void act(float delta) {
+        super.act(delta);
+        if (blinktime>0)
+        {
+            blinktime -= delta;
+            setVisible((int)(blinktime*8)%2==0);
+        }
+        else
+        {
+            setVisible(true);
+        }
+    }
 }

@@ -5,10 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
@@ -80,11 +77,16 @@ public class GameStage extends MyStage{
         addActor(myTextArea2 = new MyTextField(""){
             @Override
             public void onSubmit() {
+                if ((getText().equals("\n") || getText().equals("")))
+                {
+                    blinking();
+                }
+
                 if (
-                (!getText().equals("\n") && !getText().equals("")) //üres String, enter vizsgálata
-                && (getText().substring(getText().length() == 1 ? 0 : 1 //ha csak 1 hosszú, és az előjel vagy sem
-                    ,getText().length()).matches("[0-9]+")) //számokból áll-e
-                && ((getText().charAt(0) == '-' && getText().length()>1) || (getText().charAt(0)+"").matches("[0-9]+")) //előjel, ha van akkor követi-e érték
+                (!getText().equals("\n") && !getText().equals(""))
+                        && (getText().substring(getText().length() == 1 ? 0 : 1
+                        ,getText().length()).matches("[0-9]+"))
+                        && ((getText().charAt(0) == '-' && getText().length()>1) || (getText().charAt(0)+"").matches("[0-9]+"))
                 )
                 {
                     if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
@@ -224,9 +226,9 @@ public class GameStage extends MyStage{
                 if(!klicked){help.setText(sc.showIt()); klicked = true;}
             }
         });
-        float helpWidth = MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX()));
+
         help = new MyLabel("");
-        help.setSize(helpWidth, Globals.hangMagassag);
+        help.setSize(MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX())), Globals.hangMagassag);
         help.setPosition(kerdojel.getX()+kerdojel.getWidth(), MyScreen.WORLD_HEIGHT-help.getHeight());
         addActor(help);
         setKeyboardFocus(myTextArea2);

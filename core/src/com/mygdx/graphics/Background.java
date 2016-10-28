@@ -73,21 +73,18 @@ public class Background extends Actor {
     public void setY(float y) {
         super.setY(y);
         sprite.setY(y);
-        //setOriginCenter();
     }
 
     @Override
     public void setX(float x) {
         super.setX(x);
         sprite.setX(x);
-        //setOriginCenter();
     }
 
     @Override
     public void setPosition(float x, float y) {
         super.setPosition(x, y);
         sprite.setPosition(x, y);
-        //setOriginCenter();
     }
 
     @Override

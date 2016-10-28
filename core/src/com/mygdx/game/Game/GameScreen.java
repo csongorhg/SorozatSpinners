@@ -14,10 +14,10 @@ import com.mygdx.game.MyScreen;
 
     public class GameScreen extends MyScreen {
 
-        protected GameStage gameStage;
+        public GameStage gameStage;
 
 
-        public GameScreen(Game game) {//.
+        public GameScreen(Game game) {
             super(game);
             gameStage = new GameStage(viewport, spriteBatch, game);
             Gdx.input.setOnscreenKeyboardVisible(false);

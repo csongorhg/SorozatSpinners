@@ -14,7 +14,6 @@ abstract public class MyActor extends Actor {
 
     public MyActor() {
         super();
-        //debug();
     }
 
     @Override

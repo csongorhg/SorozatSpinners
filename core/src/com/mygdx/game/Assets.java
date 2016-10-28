@@ -39,8 +39,6 @@ public class Assets {
             = new AssetDescriptor<BitmapFont>("alegreyaregular.otf", BitmapFont.class, fontParameter_HOBO_STD);
 
 
-/*    public static final AssetDescriptor<Texture> BADLOGIC_TEXTURE
-            = new AssetDescriptor<Texture>("badlogic.jpg", Texture.class);*///
     public static final AssetDescriptor<Texture> redX
             = new AssetDescriptor<Texture>("redX.png", Texture.class);
     public static final AssetDescriptor<Texture> greenCheck
@@ -68,7 +66,6 @@ public class Assets {
         assetManager.setLoader(BitmapFont.class, ".ttf", new FreetypeFontLoader(resolver));
         assetManager.setLoader(BitmapFont.class, ".otf", new FreetypeFontLoader(resolver));
 
-        //assetManager.load(BADLOGIC_TEXTURE);
         assetManager.load(redX);
         assetManager.load(greenCheck);
         assetManager.load(BENDSOUND_ACOUSTICBREEZE);
