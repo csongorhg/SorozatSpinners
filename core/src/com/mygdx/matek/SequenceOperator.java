@@ -11,6 +11,7 @@ public class SequenceOperator {
     private int piece;
 
     public void newSequence(int diff){//0(easy),1(medium),2(hard)
+        sequence = new Sequence();
         sequence.setSzor(false);
         sequence.setStarter(random(1,9));
         if(diff>-1 && diff<3){

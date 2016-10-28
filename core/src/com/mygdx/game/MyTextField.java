@@ -37,7 +37,7 @@ public class MyTextField extends TextField {
         FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
         meret.size = Globals.size/2;
         meret.characters = Globals.CHARS;
-        style.font =  Assets.assetManager.get(Assets.FONT_C64);
+        style.font =  Assets.assetManager.get(Assets.FONT_HOBO_STD);
         BitmapFont font = generator.generateFont(meret);
         generator.dispose();
         style.font = font;
