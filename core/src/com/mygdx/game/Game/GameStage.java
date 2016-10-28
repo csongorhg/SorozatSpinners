@@ -3,12 +3,8 @@ package com.mygdx.game.Game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
 import com.mygdx.game.Globals;
@@ -24,8 +20,6 @@ import com.mygdx.game.PopupOneSpriteStaticActor;
 import com.mygdx.graphics.Background;
 import com.mygdx.matek.SequenceOperator;
 
-import javax.swing.GroupLayout;
-
 /**
  * Created by Kicsi on 2016. 10. 07..
  */
@@ -40,6 +34,7 @@ public class GameStage extends MyStage{
         super(viewport, game);
     }
 
+    //Buttons buttons;
     public static MyTextField myTextArea2;
     public MyLabel stopper, help;
     public MyButton textButton;
@@ -62,17 +57,24 @@ public class GameStage extends MyStage{
         myLabel = new MyLabel[5];
         float leftMargin = 15;
 
+        //6. elem
         addActor(myTextArea2 = new MyTextField(""){
             @Override
             public void onSubmit() {
+                if ((getText().equals("\n") || getText().equals("")))
+                {
+                    blinking();
+                }
+
                 if (
                 (!getText().equals("\n") && !getText().equals(""))
-                && (getText().substring(getText().length() == 1 ? 0 : 1
-                    ,getText().length()).matches("[0-9]+"))
-                && ((getText().charAt(0) == '-' && getText().length()>1) || (getText().charAt(0)+"").matches("[0-9]+"))
+                        && (getText().substring(getText().length() == 1 ? 0 : 1
+                        ,getText().length()).matches("[0-9]+"))
+                        && ((getText().charAt(0) == '-' && getText().length()>1) || (getText().charAt(0)+"").matches("[0-9]+"))
                 )
                 {
                     if (sc.getLineNumber(5) == Integer.parseInt(getText())) {
+                        //System.out.println("Helyes megfejtés!");
                         addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.greenCheck))
                         {
                             @Override
@@ -82,6 +84,7 @@ public class GameStage extends MyStage{
                                 joValasz++;
                                 jatszottMenet++;
                                 playing=false;
+                                //Idozito.ido.stop();
                             }
 
                             @Override
@@ -95,14 +98,17 @@ public class GameStage extends MyStage{
                         });
                     }
                     else {
+                        //System.out.println("Helytelen megfejtés!");
                         addActor(new PopupOneSpriteStaticActor(Assets.assetManager.get(Assets.redX))
                         {
                             @Override
                             protected void init() {
                                 super.init();
                                 setSize(MyScreen.WORLD_WIDTH, MyScreen.WORLD_HEIGHT);
+                                //Idozito.ido.stop();
                                 jatszottMenet++;
                                 playing = false;
+                                //System.out.println(getZIndex());
                             }
 
                             @Override
@@ -122,12 +128,18 @@ public class GameStage extends MyStage{
                 }
             }
         });
-
-        //6.elem
-        myTextArea2.setWidth((MyScreen.WORLD_WIDTH-(MyScreen.WORLD_WIDTH/15)*2)-leftMargin*2);
+        /*
+        for (Actor a : getActors()) {
+            if (a instanceof PopupOneSpriteStaticActor)
+            {
+                getActors().removeValue(a,true);
+            }
+        }
+               */
+        myTextArea2.setWidth(MyScreen.WORLD_WIDTH-leftMargin*2);
         myTextArea2.setHeight(Globals.size);
         myTextArea2.setY(MyScreen.WORLD_HEIGHT/2 );
-        myTextArea2.setX((MyScreen.WORLD_WIDTH/15)*2+10f);
+        myTextArea2.setX(leftMargin);
         myTextArea2.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -139,6 +151,9 @@ public class GameStage extends MyStage{
                 {
                     myTextArea2.setText("");
                 }
+/*                if (myTextArea2.getText().compareTo("Nem megfelelő tartalmat írtál be!") == 0  || myTextArea2.getText().compareTo("A billentyű eléréséhez kattints ide!")==0) {
+
+                }*/
             }
         });
 
@@ -157,8 +172,13 @@ public class GameStage extends MyStage{
 
         sc.newSequence(PlayStage.difficulty-1);
 
+        /*for (int i = 0; i < 6; i++) {
+            System.out.println(sc.getLineNumber(i));
+        }*/
+
         for (int i = 0; i < myLabel.length; i++) {
             addActor(myLabel[i] = new MyLabel(sc.getLineNumber(i)+""));
+            //System.out.println(currentY);
             myLabel[i].setY(currentY);
             myLabel[i].setX(currentX);
             currentX += MyScreen.WORLD_WIDTH /5;
@@ -190,11 +210,10 @@ public class GameStage extends MyStage{
                 if(!klicked){help.setText(sc.showIt()); klicked = true;}
             }
         });
-        float helpWidth = MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX()));
+
         help = new MyLabel("");
-        help.setSize(helpWidth, Globals.hangMagassag);
-        help.setPosition(textButton.getX()+10, MyScreen.WORLD_HEIGHT-help.getHeight()*2);
-        help.setAlignment(Align.left);
+        help.setSize(MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX())), Globals.hangMagassag);
+        help.setPosition(kerdojel.getX()+kerdojel.getWidth(), MyScreen.WORLD_HEIGHT-help.getHeight());
         addActor(help);
         setKeyboardFocus(myTextArea2);
     }
@@ -203,6 +222,7 @@ public class GameStage extends MyStage{
         MyLabel l = new MyLabel("A helyes válasz: "+sc.getLineNumber(5));
         l.setPosition(MyScreen.WORLD_WIDTH/2 - l.getWidth()/2, MyScreen.WORLD_HEIGHT/2 - l.getHeight()/2);
         addActor(l);
+        //l.setZIndex(200);
     }
 
     private float labelHeight(){

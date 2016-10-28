@@ -14,7 +14,7 @@ import com.mygdx.game.MyScreen;
 
     public class GameScreen extends MyScreen {
 
-        protected GameStage gameStage;
+        public GameStage gameStage;
 
 
         public GameScreen(Game game) {
