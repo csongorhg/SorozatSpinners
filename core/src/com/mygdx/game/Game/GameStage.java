@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
 import com.mygdx.game.Globals;
@@ -22,6 +23,8 @@ import com.mygdx.game.OneSpriteStaticActor;
 import com.mygdx.game.PopupOneSpriteStaticActor;
 import com.mygdx.graphics.Background;
 import com.mygdx.matek.SequenceOperator;
+
+import javax.swing.GroupLayout;
 
 /**
  * Created by Kicsi on 2016. 10. 07..
@@ -211,7 +214,8 @@ public class GameStage extends MyStage{
         float helpWidth = MyScreen.WORLD_WIDTH-(kerdojel.getX()+kerdojel.getWidth()+10+(MyScreen.WORLD_WIDTH-stopper.getX()));
         help = new MyLabel("");
         help.setSize(helpWidth, Globals.hangMagassag);
-        help.setPosition(kerdojel.getX()+kerdojel.getWidth(), MyScreen.WORLD_HEIGHT-help.getHeight());
+        help.setPosition(textButton.getX()+10, MyScreen.WORLD_HEIGHT-help.getHeight()*2);
+        help.setAlignment(Align.left);
         addActor(help);
         setKeyboardFocus(myTextArea2);
     }
