@@ -1,6 +1,8 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -24,13 +26,26 @@ public class EndStage extends MyStage {
     public EndStage(Game game) {
         super(game);
     }
-    public EndStage(Viewport viewport, Batch batch, Game game) { super(viewport, batch, game); }
+    public EndStage(Viewport viewport, Batch batch, Game game) {
+        super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(true);
+    }
     public EndStage(Viewport viewport, Game game) {
         super(viewport, game);
     }
 
     private MyLabel labelEnd;
     private TextButton bBack;
+
+    @Override
+    public boolean keyDown(int keyCode) {
+        if (keyCode == Input.Keys.BACK)
+        {
+            Globals.musicchange = !Globals.musicchange;
+            game.setScreen(new MenuScreen(game));
+        }
+        return false;
+    }
 
 
     protected void init(){

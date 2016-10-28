@@ -1,6 +1,8 @@
 package com.mygdx.game.Menu;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -24,11 +26,22 @@ public class CreditsStage extends MyStage {
     }
 
     public CreditsStage(Viewport viewport, Batch batch, Game game) {
+
         super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(true);
     }
 
     public CreditsStage(Viewport viewport, Game game) {
         super(viewport, game);
+    }
+
+    @Override
+    public boolean keyDown(int keyCode) {
+        if (keyCode == Input.Keys.BACK)
+        {
+            game.setScreen(new MenuScreen(game));
+        }
+        return false;
     }
 
     protected void init() {

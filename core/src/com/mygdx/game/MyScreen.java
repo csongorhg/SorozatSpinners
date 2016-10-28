@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.shaders.BaseShader;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 /**
@@ -26,6 +27,7 @@ abstract public class MyScreen implements Screen {
         camera.translate(WORLD_WIDTH/2, WORLD_HEIGHT/2);
         camera.update();
         Gdx.input.setOnscreenKeyboardVisible(false);
+        Gdx.input.setCatchBackKey(false);
     }
 
     @Override
@@ -69,7 +71,13 @@ abstract public class MyScreen implements Screen {
         MyTextField.refresh();
         MyButton.refresh();
         ButtonToText.refresh();
-        Gdx.app.log("asd",Globals.menumusic + "");
+
+        Gdx.app.error("asd",Globals.menumusic + "");
+        Gdx.app.error("asd",Globals.gamemusic + "");
+        Gdx.app.error("asd",Globals.menumusic.isPlaying() + " Menumusic");
+        Gdx.app.error("asd",Globals.gamemusic.isPlaying() + " Gamemusic");
+
+        Globals.music();
     }
 
     public Game getGame() {

@@ -2,6 +2,7 @@ package com.mygdx.game.Menu;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -34,6 +35,7 @@ public class MenuStage extends MyStage {
     public MenuStage(Viewport viewport, Game game) {
         super(viewport, game);
     }
+
 
     public void init()
     {

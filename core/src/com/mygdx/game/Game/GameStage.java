@@ -1,6 +1,8 @@
 package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -12,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
 import com.mygdx.game.Globals;
 import com.mygdx.game.Menu.MenuScreen;
+import com.mygdx.game.Menu.PlayScreen;
 import com.mygdx.game.Menu.PlayStage;
 import com.mygdx.game.MyButton;
 import com.mygdx.game.MyLabel;
@@ -32,7 +35,10 @@ public class GameStage extends MyStage{
     public GameStage(Game game) {
         super(game);
     }
-    public GameStage(Viewport viewport, Batch batch, Game game) { super(viewport, batch, game); }
+    public GameStage(Viewport viewport, Batch batch, Game game) {
+        super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(true);
+    }
     public GameStage(Viewport viewport, Game game) {
         super(viewport, game);
     }
@@ -50,6 +56,16 @@ public class GameStage extends MyStage{
     boolean klicked = false;
 
     private int ido = 60;
+
+    @Override
+    public boolean keyDown(int keyCode) {
+        if (keyCode == Input.Keys.BACK)
+        {
+            Globals.musicchange = !Globals.musicchange;
+            game.setScreen(new InformationScreen(game));
+        }
+        return false;
+    }
 
     protected void init() {
         b = new Background();

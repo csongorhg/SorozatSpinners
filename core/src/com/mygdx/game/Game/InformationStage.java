@@ -2,6 +2,7 @@ package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Assets;
 import com.mygdx.game.ButtonToText;
 import com.mygdx.game.Globals;
+import com.mygdx.game.Menu.MenuScreen;
 import com.mygdx.game.Menu.MenuStage;
 import com.mygdx.game.Menu.PlayScreen;
 import com.mygdx.game.Menu.PlayStage;
@@ -47,6 +49,16 @@ public class InformationStage extends MyStage{
 
     public InformationStage(Viewport viewport, Batch batch, Game game) {
         super(viewport, batch, game);
+        Gdx.input.setCatchBackKey(true);
+    }
+
+    @Override
+    public boolean keyDown(int keyCode) {
+        if (keyCode == Input.Keys.BACK)
+        {
+            game.setScreen(new PlayScreen(game));
+        }
+        return false;
     }
 
     protected void init() {

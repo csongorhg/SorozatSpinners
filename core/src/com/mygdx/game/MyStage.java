@@ -1,6 +1,7 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -41,7 +42,7 @@ public class MyStage extends Stage {
 
     protected void init(){
         musicGenerator();
-        music();
+        Globals.music();
 
     };
 
@@ -58,26 +59,11 @@ public class MyStage extends Stage {
                 hang.remove();
                 Globals.vanHang = !Globals.vanHang;
                 musicGenerator();
-                music();
+                Globals.music();
             }
         });
     }
 
-    void music (){
-        if(Globals.musicchange && Globals.vanHang){
-            Globals.gamemusic.stop();
-            Globals.menumusic.play();
-        }
-        else if(!Globals.musicchange && Globals.vanHang){
-            Globals.menumusic.stop();
-            Globals.gamemusic.play();
-        }
-        else{
-            Globals.menumusic.stop();
-            Globals.gamemusic.stop();
-        }
-
-    }
 
     @Override
     public void act(float delta) {

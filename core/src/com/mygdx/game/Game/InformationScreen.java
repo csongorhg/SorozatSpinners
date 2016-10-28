@@ -2,6 +2,7 @@ package com.mygdx.game.Game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.mygdx.game.Globals;
 import com.mygdx.game.MyScreen;
 
 /**
