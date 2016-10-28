@@ -10,7 +10,7 @@ public class SequenceOperator {
     private int numberIntervallumMax = 10;
     private int piece;
 
-    public void newSequence(int diff){//0(easy),1(medium),2(hard)
+    public void newSequence(int diff){//0(konnyu),1(kozepes),2(nehez)
         sequence = new Sequence();
         sequence.setSzor(false);
         sequence.setStarter(random(1,9));

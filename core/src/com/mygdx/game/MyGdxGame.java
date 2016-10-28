@@ -40,8 +40,6 @@ public class MyGdxGame extends Game {
 	@Override
 	public void setScreen(Screen screen) {
 		super.setScreen(screen);
-
-		//Gdx.input.setCatchBackKey(false);
 	}
 
 	@Override

@@ -28,7 +28,6 @@ public class ButtonToText extends TextButton{
         textButtonStyle.font = Assets.assetManager.get(Assets.FONT_HOBO_STD);
 
 
-        //átméretezés
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("alegreyaregular.otf"));
         FreeTypeFontGenerator.FreeTypeFontParameter meret = new FreeTypeFontGenerator.FreeTypeFontParameter();
         meret.size = (int)(MyScreen.WORLD_HEIGHT*0.05);
@@ -36,7 +35,6 @@ public class ButtonToText extends TextButton{
         BitmapFont font = generator.generateFont(meret);
         generator.dispose();
         textButtonStyle.font = font;
-        //átméretezés vége
 
         Pixmap p = new Pixmap(1,1, Pixmap.Format.RGB888);
         p.setColor(0.3f,0.3f,0.3f, 1f);

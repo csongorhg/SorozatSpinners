@@ -215,7 +215,7 @@ public class Buttons extends Group {
                     appendText("torol");
                     minus = false;
                 }
-                else if ((GameStage.myTextArea2.getText()).length() > 0) { //nem tud minusz indexen törölni
+                else if ((GameStage.myTextArea2.getText()).length() > 0) {
                     appendText("torol");
                 }
 
