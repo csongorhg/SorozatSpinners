@@ -69,6 +69,7 @@ abstract public class MyScreen implements Screen {
         MyTextField.refresh();
         MyButton.refresh();
         ButtonToText.refresh();
+        Gdx.app.log("asd",Globals.menumusic + "");
     }
 
     public Game getGame() {
